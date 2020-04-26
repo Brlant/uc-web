@@ -1,0 +1,71 @@
+.table-hover {
+  > tbody > tr {
+    &:hover, &.active {
+      background: $dialog-left-bg;
+    }
+  }
+}
+
+.el-table {
+  .table-header-color {
+    th {
+      background-color: $tableHeaderColor;
+    }
+  }
+}
+
+.el-table {
+  .sub-table-header-color {
+    th {
+      background-color: #f5f7fa;
+    }
+  }
+}
+
+.table.table-header-color {
+  > thead {
+    th {
+      background-color: $tableHeaderColor;
+    }
+  }
+}
+
+.el-table.el-table--expand {
+  .el-table__row.expanded {
+    background: #f5f7fa;
+  }
+
+  .el-table__expanded-cell {
+    padding: 10px;
+
+    .el-table__body {
+      background: #f5f7fa;
+    }
+  }
+}
+
+
+.header-list {
+  &.el-table th {
+    background-color: #eef1f6;
+
+    div {
+      background-color: #eef1f6;
+    }
+  }
+
+  &.el-table thead.is-group th {
+    background: #eef1f6;
+
+    .cell {
+      background: #eef1f6;
+    }
+  }
+
+  &.el-table {
+    .cell, & th > div {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+}

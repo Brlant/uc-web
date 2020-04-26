@@ -1,0 +1,19 @@
+/* 改变主题色变量 */
+$--color-primary: #409EFF;
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";
+
+@import "~@dtop/dtop-web-common/packages/theme-chalk/index";
+
+@import "mixins";
+@import "oms";
+@import "btn";
+@import "form";
+@import "dialog";
+@import "login";
+@import "d-table";
+@import "table";
+@import "info-part";

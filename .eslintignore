@@ -1,0 +1,5 @@
+build/*.js
+config/*.js
+src/components/common/upload/upload/*.*
+src/components/common/upload/scrollbar/*.*
+src/assets/fonts/iconfont.js

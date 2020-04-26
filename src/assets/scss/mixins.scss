@@ -13,9 +13,9 @@ $order_color_9: #339999;
 $order_color_10: #996699;
 $order_color_11: #ffadad;
 $dialog-left-bg: #eef2f3;
+$bgColor: rgba(96, 107, 135, 1);
 
-$primary-color: #409EFF;
-
+$primary-color: #d1566d;
 $info-color: #2db7f5;
 $success-color: #00cc66;
 $warning-color: #ff9900;
@@ -34,7 +34,6 @@ $font-size-small: 12px;
 
 $activeColor: $primary-color;
 //$activeColor: #20a0ff;
-$activeHoverColor: lighten($activeColor, 10%);
-$bgColor: $primary-color;
+$activeHoverColor: #fb6783;
+$bgColor: rgba(96, 107, 135, 1);
 $tableHeaderColor: #dfebf8;
-

@@ -1,7 +1,7 @@
 <template>
   <div class="login-part">
     <el-card class="box-card main-card-box">
-      <div class="logo-part clearfix"><img :src="logoUrl">{{ domainInfo.name ? domainInfo.name : '宝莲灯' }}</div>
+      <div class="logo-part clearfix"><img :src="logoUrl">{{ domainInfo.name ? domainInfo.name : '用户中心' }}</div>
       <div class="form-part">
         <el-form :model="user" :rules="rules" @submit.prevent="done" label-position="top" label-width="80px"
                  onsubmit="return false" ref="loginForm">

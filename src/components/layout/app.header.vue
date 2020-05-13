@@ -233,7 +233,7 @@
       <div class="container">
         <div class="top-logo">
           <router-link to='/' class="a-link"><img class="logo_pic" :src="logoUrl" @click="activeId=''">
-            <span class="logo-span">{{ domainInfo.name ? domainInfo.name : '宝莲灯' }}</span>
+            <span class="logo-span">{{ domainInfo.name ? domainInfo.name : '用户中心' }}</span>
           </router-link>
         </div>
         <div class="top-right">

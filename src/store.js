@@ -156,9 +156,9 @@ const mutations = {
     state.domainInfo = data;
     let title = document.getElementById('codesTitle');
     if (data.id) {
-      title.innerHTML = data.name ? data.name : '宝莲灯';
+      title.innerHTML = data.name ? data.name : '用户中心';
     } else {
-      title.innerHTML = '宝莲灯';
+      title.innerHTML = '用户中心';
     }
   },
   initPrint(state, data) {

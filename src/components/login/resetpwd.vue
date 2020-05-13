@@ -6,7 +6,7 @@
 <template>
   <div class="login-part">
     <el-card class="box-card main-card-box">
-      <div class="logo-part clearfix"><img :src="logoUrl">{{ domainInfo.name ? domainInfo.name : '宝莲灯' }}</div>
+      <div class="logo-part clearfix"><img :src="logoUrl">{{ domainInfo.name ? domainInfo.name : '用户中心' }}</div>
       <div style="padding:0 20px">
         <h3 class="text-center">重置密码</h3>
         <div class="login-menu">

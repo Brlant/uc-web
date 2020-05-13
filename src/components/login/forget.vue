@@ -8,7 +8,7 @@
 <template>
   <div class="login-part">
     <el-card class="box-card main-card-box">
-      <div class="logo-part clearfix"><img :src="logoUrl">{{ domainInfo.name ? domainInfo.name : '宝莲灯' }}</div>
+      <div class="logo-part clearfix"><img :src="logoUrl">{{ domainInfo.name ? domainInfo.name : '用户中心' }}</div>
 
       <div class="form-part">
         <div v-if="showInfo" class="text-center">

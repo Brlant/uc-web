@@ -175,8 +175,6 @@
         if(!this.sys || !this.sys.objectId) return;
         let param = Object.assign({}, {
           deleteFlag: false,
-          objectId: this.sys.objectId,
-          domainObject: this.sys.objectId,
           usableStatus: 1
         }, this.filters);
         Access.queryTbsRoles(param).then(res => {
@@ -197,7 +195,6 @@
             };
           });
           if (!this.form.id) {
-            formData.objectId = this.sys.objectId;
             OrgUser.save(formData).then(() => {
               this.doing = false;
               this.$notify.success({
@@ -215,7 +212,6 @@
               this.doing = false;
             });
           } else {
-            formData.objectId = this.sys.objectId;
             OrgUser.update(formData.id, formData).then(() => {
               this.doing = false;
               this.$notify.success({

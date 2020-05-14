@@ -442,13 +442,6 @@ export default [{
     'sort': 6,
     'children': null,
     'leaf': true
-  },    {
-    'id': 'bsp-xtpt-log-query',
-    'parentId': 'bsp-system-config',
-    'label': '数据集推送日志',
-    'sort': null,
-    'children': null,
-    'leaf': true
   }],
   'leaf': false
   }];

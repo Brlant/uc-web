@@ -8,10 +8,10 @@
     <h2 class="clearfix">{{title}}</h2>
     <el-form ref="accountform" :model="form" label-width="100px" :rules="rules"
              @submit.prevent="onSubmit('accountform')" onsubmit="return false">
-<!--      <el-form-item label="授权单位" prop="subjectOrgId">-->
-<!--        <org-select :list="allOrgList" :remoteMethod="queryUpAllFactory"-->
-<!--                    placeholder="请输入名称搜索授权单位" v-model="form.subjectOrgId"></org-select>-->
-<!--      </el-form-item>-->
+      <!--      <el-form-item label="授权单位" prop="subjectOrgId">-->
+      <!--        <org-select :list="allOrgList" :remoteMethod="queryUpAllFactory"-->
+      <!--                    placeholder="请输入名称搜索授权单位" v-model="form.subjectOrgId"></org-select>-->
+      <!--      </el-form-item>-->
       <el-form-item label="被授权单位" prop="objectOrgId">
         <org-select :list="downOrgList" :remoteMethod="queryDownAllFactoryNew"
                     placeholder="请输入名称搜索被授权单位" v-model="form.objectOrgId"></org-select>
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-  import {traceRight} from '@/resources';
+  import {DhsBaseInfo, traceRight} from '@/resources';
   import methodsMixin from '@/mixins/methodsMixin';
 
   export default {
@@ -120,7 +120,9 @@
           keyWord: query,
           orgAuditStatus: '1'
         };
-        this.queryDownAllFactory(params);
+        DhsBaseInfo.query(params).then(res => {
+          this.downOrgList = res.data.list;
+        });
       },
       onSubmit: function (formName) {
         let self = this;

@@ -228,7 +228,16 @@ export default [
     'parentId': null,
     'label': '系统管理',
     'sort': 3,
-    'children': [{
+    'children': [
+      {
+        'id': 'code-access-log-watch',
+        'parentId': 'code-system-manager',
+        'label': '单支追溯查询日志',
+        'sort': 5,
+        'children': null,
+        'leaf': true
+      },
+      {
       'id': 'code-system-log-query',
       'parentId': 'code-system-manager',
       'label': '系统日志',

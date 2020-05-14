@@ -109,6 +109,9 @@
             <el-tree :data="tree" show-checkbox default-expand-all node-key="id" ref="tree" highlight-current
                      :default-checked-keys="checkedIdList" :props="defaultProps"
                      :filter-node-method="filterNode">
+<!--              <div slot-scope="{node}">-->
+<!--                {{node.data.label}}{{node.data.id}}-->
+<!--              </div>-->
             </el-tree>
           </el-scrollbar>
         </el-form>
@@ -259,26 +262,28 @@
             let parent = node.parent;
             if (Array.isArray(parent.data)) {
               rolelist.push({
-                name: val.id,
+                name: val.id.split('.') && val.id.split('.')[0],
                 title: val.label,
                 sort: this.getNodeIndex(val.id) || index,
                 superiorName: null,
-                superiorTitle: null
+                superiorTitle: null,
+                objectType: val.objectType
               });
             } else {
               rolelist.push({
-                name: val.id,
+                name: val.id.split('.') && val.id.split('.')[0],
                 title: val.label,
                 sort: this.getNodeIndex(val.id) || index,
                 superiorName: parent.data.id,
                 superiorTitle:
-                parent.data.label
+                parent.data.label,
+                objectType: val.objectType
               });
             }
           });
           this.form.permissionList = rolelist;
           if (this.action === 'add') {
-            this.form.objectId = this.sys.objectId;
+            // this.form.objectId = this.sys.objectId;
             Access.addTbsRoles(this.form).then(() => {
               this.doing = false;
               this.$notify.success({

@@ -37,13 +37,13 @@ export const route = [
         children: []
       },
       {
-        path: '/account/all', component: () => import('./components/common/parent-route.vue'),
-        meta: {moduleId: 'account', title: '账户管理', icon: 'setting', perm: 'lantern-account-manager'},
+        path: '/account/all', component: () => import('./components/system/tbs-permission/index.vue'),
+        meta: {moduleId: 'account', title: '账户管理', icon: 'setting', perm: 'mdm-platform-user-watch', systemId: 'dhs'},
         children: []
       },
       {
-        path: '/role/all', component: () => import('./components/common/parent-route.vue'),
-        meta: {moduleId: 'role', title: '角色管理', icon: 'permission', perm: 'lantern-role-manager'},
+        path: '/role/all', component: () => import('./components/system/tbs-role/index.vue'),
+        meta: {moduleId: 'role', title: '角色管理', icon: 'permission', perm: 'access-role-watch', systemId: 'dhs'},
         children: []
       },
       {
@@ -52,47 +52,26 @@ export const route = [
         children: []
       },
       {
-        path: '/system',
-        component: () => import('./components/common/parent-route.vue'),
-        meta: {moduleId: 'system', title: '系统管理', icon: 'sys-setting', perm: 'system-config'},
-        children: [
-          {
-            path: '/system/trace/config',
-            component: () => import('./components/system/codeAccess/index.vue'),
-            meta: {moduleId: 'system', title: '货品追溯权限分配', perm: 'code-access-query'}
-          },
-          {
-            path: '/system/user',
-            component: () => import('./components/system/user/index.vue'),
-            meta: {moduleId: 'system', title: '账户管理', perm: 'mdm-platform-user-watch'}
-          },
-          {
-            path: '/system/role',
-            component: () => import('./components/system/role/index.vue'),
-            meta: {moduleId: 'system', title: '角色管理', perm: 'access-role-watch'}
-          },
-          {
-            path: '/system/log',
-            component: () => import('./components/system/log/index.vue'),
-            meta: {moduleId: 'system', title: '系统日志', perm: 'system-setting-log'}
-          }
-        ]
+        path: '/system/trace/config',
+        component: () => import('./components/system/codeAccess/index.vue'),
+        meta: {moduleId: 'system', title: '货品追溯权限分配', icon: 'detail', perm: 'code-access-query'},
+        children: []
       }
     ]
   }
 ];
 
 store.state.systemList.forEach(i => {
-  route[0].children[1].children.push({
-    path: `/account/${i.systemId}`,
-    component: () => import('./components/system/tbs-permission/index.vue'),
-    meta: {moduleId: 'account', systemId: i.systemId, perm: i.perm}
-  });
-  route[0].children[2].children.push({
-    path: `/role/${i.systemId}`,
-    component: () => import('./components/system/tbs-role/index.vue'),
-    meta: {moduleId: 'role', systemId: i.systemId, perm: i.rolePerm}
-  });
+  // route[0].children[1].children.push({
+  //   path: `/account/${i.systemId}`,
+  //   component: () => import('./components/system/tbs-permission/index.vue'),
+  //   meta: {moduleId: 'account', systemId: i.systemId, perm: i.perm}
+  // });
+  // route[0].children[2].children.push({
+  //   path: `/role/${i.systemId}`,
+  //   component: () => import('./components/system/tbs-role/index.vue'),
+  //   meta: {moduleId: 'role', systemId: i.systemId, perm: i.rolePerm}
+  // });
   route[0].children[3].children.push({
     path: `/log/${i.systemId}`,
     component: () => import('./components/system/log/index.vue'),

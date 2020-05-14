@@ -118,7 +118,7 @@
         item.loading = true;
         this.$http.get(`/oms/access/${item.id}/pojo-log/detail`).then(res => {
           res.data.detailDtoList.forEach(i => {
-            i.name = i.permissionType;
+            i.name = i.permissionType + '.' + i.domainObject;
           });
           res.data.checkedMenuList = this.checkedMenuList(res.data);
           item.detail = res.data;

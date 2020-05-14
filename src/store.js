@@ -6,6 +6,44 @@ import tbsMenu from '@/components/system/tbs-role/menus/tbs-menu';
 import bspMenu from '@/components/system/tbs-role/menus/bsp-menu';
 import portalMenu from '@/components/system/tbs-role/menus/portal-menu';
 import ospMenu from '@/components/system/tbs-role/menus/osp-menu';
+import lanMenu from '@/components/system/role/menu.js'
+// 补全后缀
+function addSuffix(menu, suf) {
+  menu.forEach(i => {
+    i.id += '.' + suf;
+    i.objectType = suf;
+    if (i.children) {
+      addSuffix(i.children, suf);
+    }
+  });
+}
+
+// 添加父节点
+function addParent(menu, id, label) {
+  const newMenu = {
+    id: 'root-' + id,
+    label,
+    children: JSON.parse(JSON.stringify(menu))
+  };
+  menu.splice(0, menu.length, newMenu);
+}
+
+function handleMenu(menu, id, label) {
+  addParent(menu, id, label);
+  addSuffix(menu, id);
+}
+
+handleMenu(dhsMenu, 'dhs-system', 'DHS权限菜单');
+handleMenu(tssMenu, 'tss-system', 'TSS权限菜单');
+handleMenu(tbsMenu, 'codes-system', 'TBS权限菜单');
+handleMenu(bspMenu, 'bsp-system', 'BSP权限菜单');
+handleMenu(portalMenu, 'portal-system', '全溯权限菜单');
+handleMenu(ospMenu, 'openapi-system', 'OSP权限菜单');
+handleMenu(lanMenu, 'lantern-system', '用户中心权限菜单');
+
+
+const allMenu = [].concat(lanMenu, dhsMenu, tssMenu, tbsMenu, bspMenu, portalMenu, ospMenu);
+
 
 Vue.use(Vuex);
 
@@ -45,13 +83,22 @@ const state = {
   bodySize: {left: '200px'},
   systemList: [
     {
+      systemId: 'lantern',
+      title: '全溯',
+      objectId: 'lantern-system',
+      perm: 'osp-account-query',
+      rolePerm: 'osp-role-query',
+      logPerm: 'osp-log-query',
+      role: allMenu
+    },
+    {
       systemId: 'dhs',
       title: 'DHS',
       objectId: 'dhs-system',
       perm: 'dhs-account-query',
       rolePerm: 'dhs-role-query',
       logPerm: 'dhs-log-query',
-      role: dhsMenu,
+      role: allMenu,
     },
     {
       systemId: 'tss',
@@ -60,7 +107,7 @@ const state = {
       perm: 'tss-account-query',
       rolePerm: 'tss-role-query',
       logPerm: 'tss-log-query',
-      role: tssMenu
+      role: allMenu
     },
     {
       systemId: 'tbs',
@@ -69,7 +116,7 @@ const state = {
       perm: 'tbs-account-query',
       rolePerm: 'tbs-role-query',
       logPerm: 'tbs-log-query',
-      role: tbsMenu
+      role: allMenu
     },
     {
       systemId: 'bsp',
@@ -78,7 +125,7 @@ const state = {
       perm: 'bsp-account-query',
       rolePerm: 'bsp-role-query',
       logPerm: 'bsp-log-query',
-      role: bspMenu
+      role: allMenu
     },
     {
       systemId: 'portal',
@@ -87,7 +134,7 @@ const state = {
       perm: 'portal-account-query',
       rolePerm: 'portal-role-query',
       logPerm: 'portal-log-query',
-      role: portalMenu
+      role: allMenu
     },
     {
       systemId: 'osp',
@@ -96,7 +143,7 @@ const state = {
       perm: 'osp-account-query',
       rolePerm: 'osp-role-query',
       logPerm: 'osp-log-query',
-      role: ospMenu
+      role: allMenu
     }
   ]
 };

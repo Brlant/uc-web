@@ -23,7 +23,8 @@
                     <a @click.prevent="searchType" class="btn-circle" href="#"><i
                       class="el-icon-t-search"></i> </a>
                 </span>
-              {{sys.title}}
+               角色管理
+<!--              {{sys.title}}-->
             </h2>
             <el-scrollbar class="d-table-left_scroll" tag="div" v-loading="loadingData">
               <div>
@@ -305,9 +306,7 @@
       getPageList: function () {// 查询角色列表
         let param = Object.assign({}, {
           keyword: this.typeTxt,
-          deleteFlag: false,
-          objectId: this.sys.objectId,
-          domainObject: this.sys.objectId
+          deleteFlag: false
         }, this.filters);
         this.loadingData = true;
         Access.queryTbsRoles(param).then(res => {
@@ -332,8 +331,18 @@
         if (!id) return;
         this.loadingRightData = true;
         Access.getRoleDetail(id).then(res => {
+          this.addSuffix(res.data.permissionList);
           this.resData = res.data;
           this.loadingRightData = false;
+        });
+      },
+      // 补全后缀
+     addSuffix(menu) {
+        menu.forEach(i => {
+          i.name += '.' + i.objectType;
+          if (i.children) {
+            this.addSuffix(i.children);
+          }
         });
       },
       resetRightBox: function () {
@@ -428,15 +437,7 @@
           this.getPageList();
           this.showRight = false;
         } else {
-          this.resData = item;
-          this.showTypeList.forEach(roleItem => {
-            if (roleItem.id === item.id) {
-              roleItem.name = item.name;
-              roleItem.title = item.title;
-            }
-          });
-          // 重新过滤树
-          // this.getMenus(this.resData.permissionList);
+          this.queryRoleDetail(this.currentItem.id);
           this.showRight = false;
         }
       }

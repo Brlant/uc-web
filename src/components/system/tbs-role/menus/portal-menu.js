@@ -305,6 +305,9 @@ export default [
           'sort': 1,
           'children': null,
           'leaf': true
+        }, {
+          id: 'biz-codes-file-upload-xml',
+          label: '上传业务数据XML'
         }],
         'leaf': false
       }, {

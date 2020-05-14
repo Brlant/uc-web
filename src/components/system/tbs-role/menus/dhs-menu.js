@@ -466,22 +466,14 @@ export default [{
     'sort': null,
     'children': null,
     'leaf': true
-  },{
+  }, {
     'id': 'mdm-batchNumber-audit',
     'parentId': 'mdm-batchNumber-manager',
-    'label': '审核通过',
+    'label': '审核批号',
     'sort': null,
     'children': null,
     'leaf': true
-  },
-    {
-      'id': 'mdm-batchNumber-reject-audit',
-      'parentId': 'mdm-batchNumber-reject-audit',
-      'label': '审核不通过',
-      'sort': null,
-      'children': null,
-      'leaf': true
-    }, {
+  }, {
     'id': 'mdm-batchNumber-delete',
     'parentId': 'mdm-batchNumber-manager',
     'label': '删除批号',
@@ -578,19 +570,7 @@ export default [{
       'sort': null,
       'children': null,
       'leaf': true
-    },{
-      'id': 'account-all-manager-start',
-      'label': '启用用户',
-      'sort': null,
-      'children': null,
-      'leaf': true
     }, {
-      'id': 'account-all-manager-stop',
-      'label': '停用用户',
-      'sort': null,
-      'children': null,
-      'leaf': true
-    },{
       'id': 'mdm-manufacture-oms-org-user-add',
       'parentId': 'mdm-org-user-manager',
       'label': '新增单位用户',

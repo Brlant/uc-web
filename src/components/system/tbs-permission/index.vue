@@ -183,8 +183,7 @@
         let data = Object.assign({}, {
           pageNo: pageNo,
           pageSize: this.pager.pageSize,
-          keyWord: this.keyTxt,
-          objectId: this.sys.objectId
+          keyWord: this.keyTxt
         }, this.filter);
         this.loadingRightData = true;
         OrgUser.queryAllTag(data).then(res => {

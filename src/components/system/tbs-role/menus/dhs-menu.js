@@ -213,6 +213,13 @@ export default [{
     'sort': 4,
     'children': null,
     'leaf': true
+  }, {
+    'id': 'platform-user-watch',
+    'parentId': 'mdm-system-config',
+    'label': '查询用户信息',
+    'sort': 4,
+    'children': null,
+    'leaf': true
   }],
   'leaf': false
 }];

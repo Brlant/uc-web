@@ -84,9 +84,7 @@
           moduleId: this.$route.path,
           text: '拼命导出中'
         });
-        let params = {
-          objectId: this.sys.objectId
-        };
+        let params = {};
         params = Object.assign({}, params, this.searchCondition);
         this.$http.get('/dhs/user/org-role/export', {params}).then(res => {
           utils.download(res.data.path);

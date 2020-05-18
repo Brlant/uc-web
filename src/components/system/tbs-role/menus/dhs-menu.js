@@ -204,19 +204,21 @@ export default [{
     'parentId': 'mdm-system-config',
     'label': '系统日志',
     'sort': 3,
-    'children': null,
-    'leaf': true
+    'children': [
+      {
+        'id': 'platform-user-watch',
+        'parentId': 'mdm-system-log',
+        'label': '查询日志操作人',
+        'sort': null,
+        'children': null,
+        'leaf': true
+      }
+    ],
+    'leaf': false
   }, {
     'id': 'mdm-attachment-name-update',
     'parentId': 'mdm-system-config',
     'label': '编辑附件名称',
-    'sort': 4,
-    'children': null,
-    'leaf': true
-  }, {
-    'id': 'platform-user-watch',
-    'parentId': 'mdm-system-config',
-    'label': '查询用户信息',
     'sort': 4,
     'children': null,
     'leaf': true

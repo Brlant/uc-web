@@ -45,6 +45,17 @@ export const route = [
         path: '/role/all', component: () => import('./components/system/tbs-role/index.vue'),
         meta: {moduleId: 'role', title: '角色管理', icon: 'permission', perm: 'access-role-watch', systemId: 'dhs'},
         children: []
+      },
+      {
+        path: '/log/all', component: () => import('./components/common/parent-route.vue'),
+        meta: {moduleId: 'log', title: '日志管理', icon: 'log', perm: 'lantern-log-manager'},
+        children: []
+      },
+      {
+        path: '/system/trace/config',
+        component: () => import('./components/system/codeAccess/index.vue'),
+        meta: {moduleId: 'system', title: '货品追溯权限分配', icon: 'detail', perm: 'code-access-query'},
+        children: []
       }
     ]
   }

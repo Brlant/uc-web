@@ -247,9 +247,9 @@
           text: '拼命导出中'
         });
         let params = {
-          objectId: this.sys.objectId, type: 0
+          type: 0
         };
-        this.$http.get('/access/statement/permission/export', {params}).then(res => {
+        this.$http.get('/dhs/access/statement/permission/export', {params}).then(res => {
           utils.download(res.data.path);
           this.$store.commit('initPrint', {
             isPrinting: false,

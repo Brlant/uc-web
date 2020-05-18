@@ -208,7 +208,7 @@ export default [{
       {
         'id': 'platform-user-watch',
         'parentId': 'mdm-system-log',
-        'label': '查询用户信息',
+        'label': '查询日志操作人',
         'sort': null,
         'children': null,
         'leaf': true

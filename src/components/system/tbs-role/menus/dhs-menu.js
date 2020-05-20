@@ -29,7 +29,7 @@ export default [{
       'leaf': true
     },
     {
-      'id': ' data-model',
+      'id': 'data-model',
       'parentId': 'data-model-manager',
       'label': '数据模型',
       'sort': null,
@@ -37,7 +37,7 @@ export default [{
       'leaf': true
     },
     {
-      'id': ' menu-management',
+      'id': 'menu-management',
       'parentId': 'data-model-manager',
       'label': '菜单管理',
       'sort': null,

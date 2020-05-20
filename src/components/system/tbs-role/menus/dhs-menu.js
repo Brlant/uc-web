@@ -11,7 +11,55 @@ export default [{
       'sort': null,
       'children': null,
       'leaf': true
-    }
+    },
+    {
+      'id': 'standard-fields',
+      'parentId': 'data-model-manager',
+      'label': '标准字段',
+      'sort': null,
+      'children': null,
+      'leaf': true
+    },
+    {
+      'id': 'data-dictionary',
+      'parentId': 'data-model-manager',
+      'label': '数据字典',
+      'sort': null,
+      'children': null,
+      'leaf': true
+    },
+    {
+      'id': ' data-model',
+      'parentId': 'data-model-manager',
+      'label': '数据模型',
+      'sort': null,
+      'children': null,
+      'leaf': true
+    },
+    {
+      'id': ' menu-management',
+      'parentId': 'data-model-manager',
+      'label': '菜单管理',
+      'sort': null,
+      'children': null,
+      'leaf': true
+    },
+    {
+      'id': 'authority-management',
+      'parentId': 'data-model-manager',
+      'label': '权限管理',
+      'sort': null,
+      'children': null,
+      'leaf': true
+    },
+    {
+      'id': 'model-publishing',
+      'parentId': 'data-model-manager',
+      'label': '模型发布',
+      'sort': null,
+      'children': null,
+      'leaf': true
+    },
   ],
   'leaf': false
 }, {
@@ -32,6 +80,22 @@ export default [{
       'id': 'authorization-base-data-manager',
       'parentId': 'base-data-manager',
       'label': '基础数据集授权权限',
+      'sort': null,
+      'children': null,
+      'leaf': true
+    }
+  ],
+  'leaf': false
+}, {
+  'id': 'flow-model-app',
+  'parentId': null,
+  'label': '流程应用',
+  'sort': 3,
+  'children': [
+    {
+      'id': 'check-flow-model-app',
+      'parentId': 'flow-model-app',
+      'label': '查看流程应用',
       'sort': null,
       'children': null,
       'leaf': true
@@ -199,7 +263,7 @@ export default [{
       'leaf': true
     }],
     'leaf': false
-  },  {
+  }, {
     'id': 'mdm-system-log',
     'parentId': 'mdm-system-config',
     'label': '系统日志',

@@ -280,13 +280,6 @@ export default [{
     ],
     'leaf': false
   }, {
-    'id': 'dhs-work-flow-audit',
-    'parentId': 'mdm-system-config',
-    'label': '工作流审核',
-    'sort': 4,
-    'children': null,
-    'leaf': true
-  }, {
     'id': 'mdm-attachment-name-update',
     'parentId': 'mdm-system-config',
     'label': '编辑附件名称',

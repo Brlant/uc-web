@@ -124,14 +124,14 @@ export default [
           'children': null,
           'leaf': true
         }, {
-          'id': "org-logistics-query",
+          'id': 'org-logistics-query',
           'parentId': 'org-logistics-manager',
           'label': '查看物流中心',
           'sort': 1,
           'children': null,
           'leaf': true
         }, {
-          'id': "'org-logistics-add",
+          'id': '\'org-logistics-add',
           'parentId': 'org-logistics-manager',
           'label': '新增物流中心',
           'sort': 2,
@@ -267,6 +267,13 @@ export default [
           'id': 'codes-file-upload',
           'parentId': 'goods-codes-upload',
           'label': '新增源文件上传',
+          'sort': 1,
+          'children': null,
+          'leaf': true
+        }, , {
+          'id': 'create-product-in-warehouse-order',
+          'parentId': 'goods-codes-upload',
+          'label': '生成成品入库订单',
           'sort': 1,
           'children': null,
           'leaf': true

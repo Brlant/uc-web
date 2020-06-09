@@ -270,7 +270,7 @@ export default [
           'sort': 1,
           'children': null,
           'leaf': true
-        }, , {
+        }, {
           'id': 'create-product-in-warehouse-order',
           'parentId': 'goods-codes-upload',
           'label': '生成成品入库订单',

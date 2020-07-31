@@ -273,7 +273,7 @@
           });
           this.form.permissionList = rolelist;
           if (this.action === 'add') {
-            this.form.objectId = 'lantern-system';
+            this.form.objectId = 'uc-system';
             Access.save(this.form).then(() => {
               this.doing = false;
               this.$notify.success({

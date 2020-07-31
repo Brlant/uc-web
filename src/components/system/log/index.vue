@@ -48,7 +48,7 @@
         <el-form class="advanced-query-form" onsubmit="return false">
           <el-row>
             <el-col :span="8">
-              <oms-form-row label="日志操作人" :span="7">
+              <oms-form-row :span="6" label="日志操作人">
                 <el-select filterable remote placeholder="请输入名称/拼音首字母缩写搜索" :remote-method="filterUser"
                            :clearable="true"
                            v-model="searchWord.operatorId" popperClass="good-selects">
@@ -58,33 +58,55 @@
                       <span class="pull-right">
                         {{user.companyDepartmentName}}
                       </span>
+                      <div class="font-gray clearfix">所属单位：{{user.orgName}}</div>
                     </div>
                   </el-option>
                 </el-select>
               </oms-form-row>
             </el-col>
             <el-col :span="8">
-              <oms-form-row label="日志操作时间" :span="8">
+              <oms-form-row label="日志操作时间" :span="7">
                 <el-col :span="24">
-                  <el-date-picker
-                    v-if="isShowDate"
-                    ref="datePicker"
-                    v-model="expectedTime"
-                    type="daterange"
-                    placeholder="请选择" format="yyyy-MM-dd">
-                  </el-date-picker>
+                  <el-date-picker :default-time="['00:00:00', '23:59:59']" placeholder="请选择"
+                                  type="datetimerange"
+                                  v-model="expectedTime"></el-date-picker>
                 </el-col>
               </oms-form-row>
             </el-col>
             <el-col :span="8">
-              <oms-form-row label="日志操作类型" :span="8">
-                <el-col :span="24">
-                  <oms-input type="text" v-model="searchWord.actionType" placeholder="请输入日志操作类型"></oms-input>
-                </el-col>
+              <oms-form-row label="操作类型" :span="6">
+                <oms-input v-model="searchWord.actionType" placeholder="请输入操作类型"/>
               </oms-form-row>
             </el-col>
           </el-row>
-          <el-row class="mt-10">
+          <el-row>
+            <el-col :span="8">
+              <oms-form-row :span="6" label="URL">
+                <oms-input placeholder="请输入URL" v-model="searchWord.url"/>
+              </oms-form-row>
+            </el-col>
+            <el-col :span="8">
+              <oms-form-row :span="6" label="请求body">
+                <oms-input placeholder="请输入请求body" v-model="searchWord.body"/>
+              </oms-form-row>
+            </el-col>
+            <el-col :span="8">
+              <oms-form-row :span="6" label="响应">
+                <oms-input placeholder="请输入response" v-model="searchWord.response"/>
+              </oms-form-row>
+            </el-col>
+          </el-row>
+          <el-row>
+            <el-col :span="8">
+              <oms-form-row :span="6" label="sessionId">
+                <oms-input placeholder="请输入sessionId" v-model="searchWord.sessionId"/>
+              </oms-form-row>
+            </el-col>
+            <el-col :span="8">
+              <oms-form-row :span="6" label="IP">
+                <oms-input placeholder="请输入IP" v-model="searchWord.ip"/>
+              </oms-form-row>
+            </el-col>
             <el-col :span="8">
               <oms-form-row label="" :span="5">
                 <el-button type="primary" native-type="submit" @click="searchInOrder">查询</el-button>
@@ -97,27 +119,34 @@
 
       <el-table :data="logList" border @row-click="showDetail" class="clearfix" :header-row-class-name="'headerClass'"
                 ref="orderDetail" v-loading="loadingData">
-        <el-table-column prop="operationTime" label="日志操作时间" :sortable="true"
-                         width="200">
+        <el-table-column label="日志操作时间" prop="operationTime"
+                         width="110">
           <template slot-scope="scope">
             {{ scope.row.operationTime | time}}
           </template>
         </el-table-column>
-        <el-table-column prop="userName" label="日志操作人" :sortable="true" width="120"></el-table-column>
-        <el-table-column prop="orgName" label="所属单位" :sortable="true" width="250"></el-table-column>
-        <el-table-column prop="actionType" label="日志操作类型" :sortable="true" width="180">
+        <el-table-column label="日志操作人" prop="userName" width="120"></el-table-column>
+        <el-table-column label="所属单位" prop="orgName" width="120"></el-table-column>
+        <el-table-column label="日志操作类型" prop="actionType" width="180">
           <template slot-scope="scope">
             {{ showActionType(scope.row.actionType)}}
           </template>
         </el-table-column>
-        <el-table-column prop="logRemarks" label="日志内容" :sortable="true"></el-table-column>
-        <el-table-column prop="ip" label="IP" :sortable="true" width="150"></el-table-column>
+        <el-table-column label="URL" min-width="120" prop="logRemarks">
+
+        </el-table-column>
+        <el-table-column label="请求body" prop="body" width="300">
+
+        </el-table-column>
+        <el-table-column label="sessionId" prop="sessionId" width="250"></el-table-column>
+        <el-table-column label="IP" prop="ip" width="150"></el-table-column>
       </el-table>
       <div class="text-center" v-show="(logList.length || pager.currentPage !== 1) && !loadingData">
-        <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
-                       :current-page="pager.currentPage"
-                       :page-sizes="[10,20,100]" :page-size="10" layout="sizes, prev, pager, next, jumper"
-                       :total="pager.count">
+        <el-pagination :current-page="pager.currentPage" :page-size="pager.pageSize"
+                       :page-sizes="[10,20,50,100]"
+                       :total="pager.count" @current-change="handleCurrentChange"
+                       @size-change="handleSizeChange"
+                       layout="sizes, prev, pager, next, jumper">
         </el-pagination>
       </div>
     </div>
@@ -153,11 +182,10 @@
         pager: {
           currentPage: 1,
           count: 0,
-          pageSize: 10
+          pageSize: parseInt(window.localStorage.getItem('currentPageSize'), 10) || 10
         },
         expectedTime: '',
-        userList: [],
-        isShowDate: true
+        userList: []
       };
     },
     mounted() {
@@ -165,8 +193,15 @@
     },
     computed: {},
     watch: {
+      // filters: {
+      //   handler: function () {
+      //     this.getLogPager(1);
+      //   },
+      //   deep: true
+      // },
       $route() {
         this.resetSearchForm();
+        this.getLogPager(1);
       }
     },
     methods: {
@@ -190,6 +225,7 @@
       },
       handleSizeChange(val) {
         this.pager.pageSize = val;
+        window.localStorage.setItem('currentPageSize', val);
         this.getLogPager(1);
       },
       handleCurrentChange(val) {
@@ -204,7 +240,7 @@
         this.pager.currentPage = pageNo;
         let param = Object.assign({}, {
           pageNo: pageNo,
-          pageSize: this.pager.pageSize
+          pageSize: this.pager.pageSize,
         }, this.filters);
         if (this.$route.meta.objectId) {
           param.systemName = this.$route.meta.objectId;
@@ -225,8 +261,8 @@
         this.showDetailPart = false;
       },
       searchInOrder: function () {// 搜索
-        this.searchWord.startTime = this.formatTimeToRangeByFormat(this.$formatAryTime(this.expectedTime, 0));
-        this.searchWord.endTime = this.formatTimeToRangeByFormat(this.$formatAryTime(this.expectedTime, 1), 1);
+        this.searchWord.startTime = this.$formatAryTime(this.expectedTime, 0, 'YYYY-MM-DD HH:mm:ss');
+        this.searchWord.endTime = this.$formatAryTime(this.expectedTime, 1, 'YYYY-MM-DD HH:mm:ss');
         Object.assign(this.filters, this.searchWord);
         this.getLogPager(1);
       },
@@ -238,19 +274,8 @@
           actionType: ''
         };
         this.expectedTime = '';
-        Object.assign(this.filters, this.searchWord);
-        this.isShowDate = false;
-        this.$nextTick(() => {
-          this.isShowDate = true;
-        });
-        this.userList = [];
+        this.filters = Object.assign({}, this.searchWord);
         this.getLogPager(1);
-      },
-      formatTimeToRangeByFormat(time, type) {
-        if (!time) return '';
-        let str = ' 23:59:59';
-        let date = this.$moment(time).format('YYYY-MM-DD');
-        return this.$moment(date + (type === 1 ? str : '')).format('YYYY-MM-DD HH:mm:ss');
       },
       formatTime(date) {
         return date ? this.$moment(date).format('YYYY-MM-DD') : '';

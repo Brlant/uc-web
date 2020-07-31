@@ -86,7 +86,7 @@
         let param = Object.assign({}, {
           keyword: this.typeTxt,
           deleteFlag: false,
-          objectId: 'lantern-system'
+          objectId: 'uc-system'
         });
         Access.query(param).then(res => {
           this.roleSelect = res.data.list;
@@ -101,7 +101,7 @@
           this.doing = true;
           let formData = JSON.parse(JSON.stringify(this.form));
           formData.orgId = this.orgId;
-          formData.domainObjectId = 'lantern-system';
+          formData.domainObjectId = 'uc-system';
           Access.bandOrgRole(formData).then(res => {
             this.doing = false;
             this.$notify.success({

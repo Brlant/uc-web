@@ -138,6 +138,11 @@
         <el-table-column label="请求body" prop="body" width="300">
 
         </el-table-column>
+        <el-table-column label="响应内容" prop="body" width="350">
+          <div slot-scope="scope" style="max-height: 150px;overflow-y: auto">
+            {{scope.row.response}}
+          </div>
+        </el-table-column>
         <el-table-column label="sessionId" prop="sessionId" width="250"></el-table-column>
         <el-table-column label="IP" prop="ip" width="150"></el-table-column>
       </el-table>

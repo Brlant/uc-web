@@ -39,7 +39,7 @@ handleMenu(tbsMenu, 'codes-system', 'TBS权限菜单');
 handleMenu(bspMenu, 'bsp-system', 'BSP权限菜单');
 handleMenu(portalMenu, 'portal-system', '全溯权限菜单');
 handleMenu(ospMenu, 'openapi-system', 'OSP权限菜单');
-handleMenu(lanMenu, 'lantern-system', '用户中心权限菜单');
+handleMenu(lanMenu, 'uc-system', '用户中心权限菜单');
 
 
 const allMenu = [].concat(lanMenu, dhsMenu, tssMenu, tbsMenu, bspMenu, portalMenu, ospMenu);
@@ -85,7 +85,7 @@ const state = {
     {
       systemId: 'lantern',
       title: '全溯',
-      objectId: 'lantern-system',
+      objectId: 'uc-system',
       perm: 'osp-account-query',
       rolePerm: 'osp-role-query',
       logPerm: 'osp-log-query',

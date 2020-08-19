@@ -485,7 +485,7 @@ export const OrgUser = resource('/dhs/user/org', http, {
 // 角色管理对象
 export const Access = resource('/oms/access', http, {
   getRoleMenus: () => {
-    return http.get('/oms/access/menus/tree', {params: {objectId: 'lantern-system'}});
+    return http.get('/oms/access/menus/tree', {params: {objectId: 'uc-system'}});
   },
   getOrgRoleList: (orgId, params) => {
     return http.get('/oms/access/org/' + orgId + '/role', {params});
@@ -815,7 +815,7 @@ export const Auth = {
     }
   },
   permission: () => {
-    return http.get('dhs-account/permissions', {params: {objectId: 'lantern-system'}});
+    return http.get('dhs-account/permissions', {params: {objectId: 'uc-system'}});
   }
 };
 

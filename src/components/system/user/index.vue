@@ -205,7 +205,7 @@
           text: '拼命导出中'
         });
         let params = {
-          objectId: 'lantern-system',
+          objectId: 'uc-system',
           type: 0
         };
         this.$http.get('/dhs/access/statement/role/export', {params}).then(res => {

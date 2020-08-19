@@ -159,7 +159,7 @@
         let param = Object.assign({}, {
           keyword: this.typeTxt,
           deleteFlag: false,
-          objectId: 'lantern-system'
+          objectId: 'uc-system'
         }, this.filters);
         Access.query(param).then(res => {
           this.roleSelect = res.data.list;
@@ -182,7 +182,7 @@
             };
           });
           formData.orgId = this.user.userCompanyAddress;
-          formData.objectId = 'lantern-system';
+          formData.objectId = 'uc-system';
           if (this.action === 'add') {
             OrgUser.save(formData).then(() => {
               this.doing = false;

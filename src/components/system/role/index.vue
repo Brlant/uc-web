@@ -293,7 +293,7 @@
         let param = Object.assign({}, {
           keyword: this.typeTxt,
           deleteFlag: false,
-          objectId: 'lantern-system'
+          objectId: 'uc-system'
         }, this.filters);
         Access.query(param).then(res => {
           if (param.keyWord !== this.filters.keyWord) return;

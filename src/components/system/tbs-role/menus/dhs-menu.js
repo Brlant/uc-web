@@ -119,38 +119,6 @@ export default [{
   ],
   'leaf': false
 }, {
-  'id': 'flow-model-app',
-  'parentId': null,
-  'label': '流程应用',
-  'sort': 3,
-  'children': [
-    {
-      'id': 'check-flow-model-app',
-      'parentId': 'flow-model-app',
-      'label': '查看流程应用',
-      'sort': null,
-      'children': null,
-      'leaf': true
-    }
-  ],
-  'leaf': false
-}, {
-  'id': 'flow-model-app',
-  'parentId': null,
-  'label': '流程应用',
-  'sort': 3,
-  'children': [
-    {
-      'id': 'check-flow-model-app',
-      'parentId': 'flow-model-app',
-      'label': '查看流程应用',
-      'sort': null,
-      'children': null,
-      'leaf': true
-    }
-  ],
-  'leaf': false
-}, {
   'id': 'mdm-operating-goods-manager',
   'parentId': null,
   'label': '经营货品',

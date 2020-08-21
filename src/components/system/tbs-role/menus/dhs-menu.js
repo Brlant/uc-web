@@ -89,6 +89,46 @@ export default [{
 }, {
   'id': 'flow-model-app',
   'parentId': null,
+  'label': '我的审批',
+  'sort': 3,
+  'children': [
+    {
+      'id': 'flow-model-app-query',
+      'parentId': 'flow-model-app',
+      'label': '查看待办流程',
+      'sort': null,
+      'children': null,
+      'leaf': true
+    },
+    {
+      'id': 'checked-flow-model-app-query',
+      'parentId': 'flow-model-app',
+      'label': '查看已处理的流程',
+      'sort': null,
+      'children': null,
+      'leaf': true
+    }
+  ],
+  'leaf': false
+}, {
+  'id': 'flow-model-app',
+  'parentId': null,
+  'label': '流程应用',
+  'sort': 3,
+  'children': [
+    {
+      'id': 'check-flow-model-app',
+      'parentId': 'flow-model-app',
+      'label': '查看流程应用',
+      'sort': null,
+      'children': null,
+      'leaf': true
+    }
+  ],
+  'leaf': false
+}, {
+  'id': 'flow-model-app',
+  'parentId': null,
   'label': '流程应用',
   'sort': 3,
   'children': [

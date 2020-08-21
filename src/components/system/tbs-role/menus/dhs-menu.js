@@ -93,6 +93,14 @@ export default [{
   'sort': 3,
   'children': [
     {
+      'id': 'check-flow-model-app',
+      'parentId': 'flow-model-app',
+      'label': '查看我的审批',
+      'sort': null,
+      'children': null,
+      'leaf': true
+    },
+    {
       'id': 'flow-model-app-query',
       'parentId': 'flow-model-app',
       'label': '查看待办流程',

@@ -131,7 +131,7 @@ export default [
           'children': null,
           'leaf': true
         }, {
-          'id': '\'org-logistics-add',
+          'id': 'org-logistics-add',
           'parentId': 'org-logistics-manager',
           'label': '新增物流中心',
           'sort': 2,

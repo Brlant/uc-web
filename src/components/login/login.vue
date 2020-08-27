@@ -160,7 +160,6 @@
     },
     mounted: function () {
       this.$store.commit('initPermissions', []);
-      this.queryDomainInfo();
     }
   };
 </script>

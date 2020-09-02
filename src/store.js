@@ -84,7 +84,7 @@ const state = {
   systemList: [
     {
       systemId: 'lantern',
-      title: '全溯',
+      title: '用户中心',
       objectId: 'uc-system',
       perm: 'osp-account-query',
       rolePerm: 'osp-role-query',

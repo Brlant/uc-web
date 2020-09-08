@@ -26,7 +26,7 @@
                角色管理
 <!--              {{sys.title}}-->
             </h2>
-            <el-scrollbar class="d-table-left_scroll" tag="div" v-loading="loadingData">
+            <el-scrollbar class="d-table-left_scroll" @scroll="scrollLoadingData" tag="div" v-loading="loadingData">
               <div>
                 <div class="search-left-box mr-10" v-show="showTypeSearch">
                   <oms-input :showFocus="showTypeSearch" placeholder="请输入名称搜索" v-model="filters.keyWord"></oms-input>
@@ -49,6 +49,12 @@
                 </div>
               </div>
             </el-scrollbar>
+          </div>
+          <div class="btn-left-list-more" v-if="showTypeList.length!==0">
+            <bottom-loading></bottom-loading>
+            <div @click.stop="getMore" v-show="!$store.state.bottomLoading">
+              <el-button v-show="pager.currentPage<pager.totalPage">加载更多</el-button>
+            </div>
           </div>
         </div>
         <div class="d-table-right">
@@ -182,6 +188,12 @@
           usableStatus: 1,
           keyWord: ''
         },
+        pager: {
+          currentPage: 1,
+          count: 0,
+          pageSize: 20,
+          totalPage: 1
+        },
         activeStatus: 1,
         menuList: [],
         loadingData: false,
@@ -216,13 +228,13 @@
       },
     },
     mounted() {
-      this.getPageList();
+      this.getPageList(1);
       this.getMenuList();
     },
     watch: {
       filters: {
         handler: function () {
-          this.getPageList();
+          this.getPageList(1);
         },
         deep: true
       },
@@ -231,11 +243,17 @@
       },
       '$route'() {
         this.typeTxt = '';
-        this.getPageList();
+        this.getPageList(1);
         this.getMenuList();
       }
     },
     methods: {
+      scrollLoadingData(event) {
+        this.$scrollLoadingData(event);
+      },
+      getMore: function () {
+        this.getPageList(this.pager.currentPage + 1, true);
+      },
       records() {
         this.showTypeRight = true;
         this.form = this.resData;
@@ -303,21 +321,34 @@
         });
         this.getCheckedMenu(checkedMenuList, permissionIdList);
       },
-      getPageList: function () {// 查询角色列表
+      getPageList: function (pageNo, isContinue = false) {// 查询角色列表
+        this.pager.currentPage = pageNo;
         let param = Object.assign({}, {
+          pageNo: pageNo,
+          pageSize: this.pager.pageSize,
           keyword: this.typeTxt,
           deleteFlag: false
         }, this.filters);
         this.loadingData = true;
         Access.queryTbsRoles(param).then(res => {
-          this.loadingData = false;
           if (param.keyWord !== this.filters.keyWord) return;
-          this.showTypeList = res.data.list;
-          this.typeList = res.data.list;
-          this.currentItem = Object.assign({id: ''}, this.showTypeList[0]);
-          this.queryRoleDetail(this.currentItem.id);
+          this.$store.commit('initBottomLoading', false);
+          if (isContinue) {
+            this.showTypeList = this.showTypeList.concat(res.data.list);
+          } else {
+            this.showTypeList = res.data.list;
+            this.typeList = res.data.list;
+            this.currentItem = Object.assign({id: ''}, this.showTypeList[0]);
+            if (res.data.list.length !== 0) {
+              this.queryRoleDetail(this.currentItem.id);
+            } else {
+              this.resData = {};
+            }
+          }
+          this.loadingData = false;
+          this.pager.totalPage = res.data.totalPage;
+          this.queryStatusNum(param);
         });
-        this.queryStatusNum(param);
       },
       queryStatusNum: function (params) {
         Access.queryStateNum(params).then(res => {
@@ -378,7 +409,7 @@
           itemTemp.usableStatus = 0;
           Access.update(itemTemp.id, itemTemp).then(() => {
             this.resData.usableStatus = 0;
-            this.getPageList();
+            this.getPageList(1);
             this.$notify.success({
               title: '成功',
               message: '已成功停用角色"' + this.resData.title + '"'
@@ -396,7 +427,7 @@
           itemTemp.usableStatus = 1;
           Access.update(itemTemp.id, itemTemp).then(() => {
             this.resData.usableStatus = 1;
-            this.getPageList();
+            this.getPageList(1);
             this.$notify.success({
               title: '成功',
               message: '已成功启用角色"' + this.resData.title + '"'
@@ -411,7 +442,7 @@
           type: 'warning'
         }).then(() => {
           Access.delete(this.resData.id).then(() => {
-            this.getPageList();
+            this.getPageList(1);
             this.$notify.success({
               title: '成功',
               message: '已成功删除角色"' + this.resData.title + '"'
@@ -421,7 +452,7 @@
       },
       removeType: function (item) {
         Access.delete(item.id).then(() => {
-          this.getPageList();
+          this.getPageList(1);
           this.$notify.success({
             title: '成功',
             message: '已成功删除角色"' + item.title + '"'
@@ -434,7 +465,7 @@
       },
       change: function (item) {
         if (this.action === 'add') {
-          this.getPageList();
+          this.getPageList(1);
           this.showRight = false;
         } else {
           this.queryRoleDetail(this.currentItem.id);

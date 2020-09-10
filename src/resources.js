@@ -441,7 +441,7 @@ export const Department = resource('/department', http, {
 // 对象字段编号记录对象
 export const pojoLog = resource('/pojo-log', http, {
   queryPojoLog: (objId, objType, params) => {
-    return http.get('/dhs-pojo-log/type/' + objType + '/id/' + objId, {params});
+    return http.get('/uc-pojo-log/type/' + objType + '/id/' + objId, {params});
   }
 });
 

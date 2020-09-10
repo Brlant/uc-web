@@ -512,6 +512,9 @@ export const Access = resource('/oms/access', http, {
     return http.get('/oms/access/org', {params});
   },
   queryTbsRoles(params) {
+    return http.get('/dhs-account/access', {params});
+  },
+  queryTbsRoleList(params) {
     return http.get('/dhs-account/access/list', {params});
   },
   addTbsRoles(obj) {

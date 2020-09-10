@@ -177,7 +177,7 @@
           deleteFlag: false,
           usableStatus: 1
         }, this.filters);
-        Access.queryTbsRoles(param).then(res => {
+        Access.queryTbsRoleList(param).then(res => {
           this.roleSelect = res.data;
         });
       },

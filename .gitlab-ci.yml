@@ -15,9 +15,11 @@ lint:
 
 local-build:
   stage: build
+  only:
+    - master
   tags:
     - node
   script:
     - npm run build
     - scp -r dist/* root@172.25.10.10:/opt/dev-web-dist/uc-web
-    
+

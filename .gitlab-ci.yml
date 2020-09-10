@@ -17,6 +17,7 @@ local-build:
   stage: build
   only:
     - master
+    - tags
   tags:
     - node
   script:

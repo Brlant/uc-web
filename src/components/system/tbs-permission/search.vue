@@ -17,9 +17,19 @@
     <el-form class="advanced-query-form" onsubmit="return false">
       <el-row>
         <el-col :span="8">
-          <oms-form-row :span="6" label="业务单位">
-            <org-select :list="downOrgList" :remoteMethod="queryDownAllFactory"
-                        placeholder="请输入名称搜索业务单位" v-model="searchCondition.orgId"></org-select>
+          <oms-form-row label="业务单位" :span="6">
+            <el-select filterable remote placeholder="请输入名称搜索业务单位" :remote-method="queryDownAllFactory"
+                       :clearable="true" @click.native="queryDownAllFactory('')"
+                       v-model="searchCondition.orgId" popperClass="good-selects">
+              <el-option :value="org.id" :key="org.id" :label="org.name" v-for="org in downOrgList">
+                <div>
+                  <span style="clear:right;float:left">{{ org.name }}</span>
+                  <span class="select-other-info" style="margin-top: 8px;padding-left:20px;float:right">
+                      <span>系统代码:</span>{{ org.manufacturerCode }}
+                  </span>
+                </div>
+              </el-option>
+            </el-select>
           </oms-form-row>
         </el-col>
         <el-col :span="8">
@@ -28,7 +38,14 @@
           </oms-form-row>
         </el-col>
         <el-col :span="8">
-          <oms-form-row :span="8" label="用户状态">
+          <oms-form-row :span="7" label="手机号">
+            <el-input placeholder="请输入手机号搜索" v-model="searchCondition.phone" @change="search"></el-input>
+          </oms-form-row>
+        </el-col>
+      </el-row>
+      <el-row class="mt-10">
+        <el-col :span="8">
+          <oms-form-row :span="6" label="用户状态">
             <el-radio-group v-model="searchCondition.status" size="small">
               <el-radio-button label="1">正常</el-radio-button>
               <el-radio-button label="2">停用</el-radio-button>
@@ -36,10 +53,8 @@
             </el-radio-group>
           </oms-form-row>
         </el-col>
-      </el-row>
-      <el-row class="mt-10">
         <el-col :span="8">
-          <oms-form-row :span="5" label="">
+          <oms-form-row :span="7" label="">
             <el-button @click="search" plain type="primary">查询</el-button>
             <el-button @click="reset" native-type="reset">重置</el-button>
           </oms-form-row>
@@ -59,7 +74,8 @@ export default {
       searchCondition: {
         status: '',
         orgId: '',
-        keyWord: ''
+        keyWord: '',
+        phone: ''
       },
       showSearch: false,
       list: [],
@@ -74,6 +90,9 @@ export default {
       this.search();
     },
     'searchCondition.orgId'() {
+      this.search();
+    },
+    'searchCondition.phone'() {
       this.search();
     }
   },
@@ -134,7 +153,8 @@ export default {
       this.searchCondition = {
         status: '',
         orgId: '',
-        keyWord: ''
+        keyWord: '',
+        phone: ''
       };
       this.times1 = [];
       this.orgUsers = [];

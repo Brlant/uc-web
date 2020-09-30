@@ -60,6 +60,255 @@ export default [
     ]
   },
   {
+    id: 'goods-manager',
+    parentId: null,
+    label: '产品管理',
+    leaf: false,
+    children: [
+      {
+        'id': 'goods-manager-my',
+        'parentId': 'goods-manager',
+        'label': '我的产品',
+        'sort': 1,
+        'leaf': false,
+        'children': [
+          {
+          'id': 'goods-manager-my-add',
+          'parentId': 'goods-manager-my',
+          'label': '新增产品子类',
+          'sort': 1,
+          'children': null,
+          'leaf': true
+        },{
+          'id': 'goods-manager-my-view',
+          'parentId': 'goods-manager-my',
+          'label': '查看产品子类',
+          'sort': 2,
+          'children': null,
+          'leaf': true
+        },{
+          'id': 'goods-manager-my-edit',
+          'parentId': 'goods-manager-my',
+          'label': '编辑产品子类',
+          'sort': 3,
+          'children': null,
+          'leaf': true
+        },{
+          'id': 'goods-manager-my-delete',
+          'parentId': 'goods-manager-my',
+          'label': '删除产品子类',
+          'sort': 4,
+          'children': null,
+          'leaf': true
+        },{
+          'id': 'goods-manager-my-sourceCode',
+          'parentId': 'goods-manager-my',
+          'label': '编辑资源码',
+          'sort': 5,
+          'children': null,
+          'leaf': true
+        }]
+      },
+      {
+        'id': 'goods-manager-platform',
+        'parentId': 'goods-manager',
+        'label': '平台产品管理',
+        'sort': 1,
+        'leaf': false,
+        'children': [
+          {
+          'id': 'goods-manager-platform-add',
+          'parentId': 'goods-manager-platform',
+          'label': '新增产品子类',
+          'sort': 1,
+          'children': null,
+          'leaf': true
+        },{
+          'id': 'goods-manager-platform-view',
+          'parentId': 'goods-manager-platform',
+          'label': '查看产品子类',
+          'sort': 2,
+          'children': null,
+          'leaf': true
+        },{
+          'id': 'goods-manager-platform-edit',
+          'parentId': 'goods-manager-platform',
+          'label': '编辑产品子类',
+          'sort': 3,
+          'children': null,
+          'leaf': true
+        },{
+          'id': 'goods-manager-platform-delete',
+          'parentId': 'goods-manager-platform',
+          'label': '删除产品子类',
+          'sort': 4,
+          'children': null,
+          'leaf': true
+        },{
+          'id': 'goods-manager-platform-sourceCode',
+          'parentId': 'goods-manager-platform',
+          'label': '编辑资源码',
+          'sort': 5,
+          'children': null,
+          'leaf': true
+        }]
+      }
+    ]
+  },
+  {
+    id: 'traceCode-data',
+    parentId: null,
+    label: '追溯码数据',
+    leaf: false,
+    children: [
+      {
+        'id': 'traceCode-data-apply',
+        'parentId': 'traceCode-data',
+        'label': '追溯码申请',
+        'sort': 1,
+        'leaf': false,
+        children: [
+          {
+            'id': 'traceCode-data-apply-view',
+            'parentId': 'traceCode-data-apply',
+            'label': '查看追溯码详情',
+            'sort': 1,
+            'children': null,
+            'leaf': true
+          },
+          {
+            'id': 'traceCode-data-apply-apply',
+            'parentId': 'traceCode-data-apply',
+            'label': '申请追溯码',
+            'sort': 2,
+            'children': null,
+            'leaf': true
+          },
+          {
+            'id': 'traceCode-data-apply-download',
+            'parentId': 'traceCode-data-apply',
+            'label': '下载追溯码',
+            'sort': 3,
+            'children': null,
+            'leaf': true
+          },
+          {
+            'id': 'traceCode-data-apply-finishDownload',
+            'parentId': 'traceCode-data-apply',
+            'label': '完成追溯码下载',
+            'sort': 4,
+            'children': null,
+            'leaf': true
+          }
+        ]
+      },
+      {
+        'id': 'traceCode-data-replace',
+        'parentId': 'traceCode-data',
+        'label': '追溯码替换',
+        'sort': 2,
+        'leaf': false,
+        children: [
+          {
+            'id': 'traceCode-data-replace-view',
+            'parentId': 'traceCode-data-replace',
+            'label': '查看追溯码替换',
+            'sort': 1,
+            'children': null,
+            'leaf': true
+          },
+          {
+            'id': 'traceCode-data-replace-add',
+            'parentId': 'traceCode-data-replace',
+            'label': '新增追溯码替换',
+            'sort': 2,
+            'children': null,
+            'leaf': true
+          }
+        ]
+      },
+      {
+        'id': 'traceCode-data-platformReplace',
+        'parentId': 'traceCode-data',
+        'label': '平台追溯码替换',
+        'sort': 3,
+        'leaf': false,
+        children: [
+          {
+            'id': 'traceCode-data-platformReplace-view',
+            'parentId': 'traceCode-data-platformReplace',
+            'label': '查看追溯码替换',
+            'sort': 1,
+            'children': null,
+            'leaf': true
+          },
+          {
+            'id': 'traceCode-data-platformReplace-add',
+            'parentId': 'traceCode-data-platformReplace',
+            'label': '新增追溯码替换',
+            'sort': 2,
+            'children': null,
+            'leaf': true
+          }
+        ]
+      },
+      {
+        'id': 'traceCode-data-cancel',
+        'parentId': 'traceCode-data',
+        'label': '追溯码注销',
+        'sort': 4,
+        'leaf': false,
+        children: [
+          {
+            'id': 'traceCode-data-cancel-view',
+            'parentId': 'traceCode-data-cancel',
+            'label': '查看追溯码注销',
+            'sort': 1,
+            'children': null,
+            'leaf': true
+          },
+          {
+            'id': 'traceCode-data-cancel-add',
+            'parentId': 'traceCode-data-cancel',
+            'label': '新增追溯码注销',
+            'sort': 2,
+            'children': null,
+            'leaf': true
+          }
+        ]
+      },
+      {
+        'id': 'traceCode-data-platformCancel',
+        'parentId': 'traceCode-data',
+        'label': '平台追溯码注销',
+        'sort': 5,
+        'leaf': false,
+        children: [
+          {
+            'id': 'traceCode-data-platformCancel-view',
+            'parentId': 'traceCode-data-platformCancel',
+            'label': '查看追溯码注销',
+            'sort': 1,
+            'children': null,
+            'leaf': true
+          },
+          {
+            'id': 'traceCode-data-platformCancel-add',
+            'parentId': 'traceCode-data-platformCancel',
+            'label': '新增追溯码注销',
+            'sort': 2,
+            'children': null,
+            'leaf': true
+          }
+        ]
+      },
+      {
+        id: 'code-source-upload-log-query',
+        label: '查看追溯码源文件上传监控'
+      }
+    ]
+  },
+  {
     id: 'data-monitoring-manager',
     label: '追溯源数据监控',
     children: [

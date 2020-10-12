@@ -224,14 +224,6 @@ export default [
             'sort': 2,
             'children': null,
             'leaf': true
-          },
-          {
-            'id': 'traceCode-data-platformApply-finishDownload',
-            'parentId': 'traceCode-data-platformApply',
-            'label': '平台完成追溯码下载',
-            'sort': 3,
-            'children': null,
-            'leaf': true
           }
         ]
       },

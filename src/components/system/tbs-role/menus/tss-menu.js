@@ -203,6 +203,31 @@ export default [
         ]
       },
       {
+        'id': 'traceCode-data-platformApply',
+        'parentId': 'traceCode-data',
+        'label': '平台追溯码申请',
+        'sort': 1,
+        'leaf': false,
+        children: [
+          {
+            'id': 'traceCode-data-platformApply-view',
+            'parentId': 'traceCode-data-platformApply',
+            'label': '平台查看追溯码详情',
+            'sort': 1,
+            'children': null,
+            'leaf': true
+          },
+          {
+            'id': 'traceCode-data-platformApply-download',
+            'parentId': 'traceCode-data-platformApply',
+            'label': '平台下载追溯码',
+            'sort': 2,
+            'children': null,
+            'leaf': true
+          }
+        ]
+      },
+      {
         'id': 'traceCode-data-replace',
         'parentId': 'traceCode-data',
         'label': '追溯码替换',

@@ -293,11 +293,147 @@ export default [
           'leaf': true
         }],
         'leaf': false
-      }, {
+      },
+      {
+        'id': 'goods-manager-my',
+        'parentId': 'code-data-manager',
+        'label': '我的产品',
+        'sort': 2,
+        'leaf': false,
+        'children': [
+          {
+            'id': 'goods-manager-my-add',
+            'parentId': 'goods-manager-my',
+            'label': '新增产品子类',
+            'sort': 1,
+            'children': null,
+            'leaf': true
+          },{
+            'id': 'goods-manager-my-view',
+            'parentId': 'goods-manager-my',
+            'label': '查看产品子类',
+            'sort': 2,
+            'children': null,
+            'leaf': true
+          },{
+            'id': 'goods-manager-my-edit',
+            'parentId': 'goods-manager-my',
+            'label': '编辑产品子类',
+            'sort': 3,
+            'children': null,
+            'leaf': true
+          },{
+            'id': 'goods-manager-my-delete',
+            'parentId': 'goods-manager-my',
+            'label': '删除产品子类',
+            'sort': 4,
+            'children': null,
+            'leaf': true
+          },{
+            'id': 'goods-manager-my-sourceCode',
+            'parentId': 'goods-manager-my',
+            'label': '编辑资源码',
+            'sort': 5,
+            'children': null,
+            'leaf': true
+          }]
+      },
+      {
+        'id': 'traceCode-data-apply',
+        'parentId': 'code-data-manager',
+        'label': '追溯码申请',
+        'sort': 3,
+        'leaf': false,
+        children: [
+          {
+            'id': 'traceCode-data-apply-view',
+            'parentId': 'traceCode-data-apply',
+            'label': '查看追溯码详情',
+            'sort': 1,
+            'children': null,
+            'leaf': true
+          },
+          {
+            'id': 'traceCode-data-apply-apply',
+            'parentId': 'traceCode-data-apply',
+            'label': '申请追溯码',
+            'sort': 2,
+            'children': null,
+            'leaf': true
+          },
+          {
+            'id': 'traceCode-data-apply-download',
+            'parentId': 'traceCode-data-apply',
+            'label': '下载追溯码',
+            'sort': 3,
+            'children': null,
+            'leaf': true
+          },
+          {
+            'id': 'traceCode-data-apply-finishDownload',
+            'parentId': 'traceCode-data-apply',
+            'label': '完成追溯码下载',
+            'sort': 4,
+            'children': null,
+            'leaf': true
+          }
+        ]
+      },
+      {
+        'id': 'traceCode-data-replace',
+        'parentId': 'code-data-manager',
+        'label': '追溯码替换',
+        'sort': 4,
+        'leaf': false,
+        children: [
+          {
+            'id': 'traceCode-data-replace-view',
+            'parentId': 'traceCode-data-replace',
+            'label': '查看追溯码替换',
+            'sort': 1,
+            'children': null,
+            'leaf': true
+          },
+          {
+            'id': 'traceCode-data-replace-add',
+            'parentId': 'traceCode-data-replace',
+            'label': '新增追溯码替换',
+            'sort': 2,
+            'children': null,
+            'leaf': true
+          }
+        ]
+      },
+      {
+        'id': 'traceCode-data-cancel',
+        'parentId': 'code-data-manager',
+        'label': '追溯码注销',
+        'sort': 5,
+        'leaf': false,
+        children: [
+          {
+            'id': 'traceCode-data-cancel-view',
+            'parentId': 'traceCode-data-cancel',
+            'label': '查看追溯码注销',
+            'sort': 1,
+            'children': null,
+            'leaf': true
+          },
+          {
+            'id': 'traceCode-data-cancel-add',
+            'parentId': 'traceCode-data-cancel',
+            'label': '新增追溯码注销',
+            'sort': 2,
+            'children': null,
+            'leaf': true
+          }
+        ]
+      },
+      {
         'id': 'biz-codes-upload',
         'parentId': 'code-data-manager',
         'label': '业务追溯上传',
-        'sort': 3,
+        'sort': 6,
         'children': [{
           'id': 'biz-codes-file-query',
           'parentId': 'biz-codes-upload',
@@ -317,11 +453,12 @@ export default [
           label: '上传业务数据XML'
         }],
         'leaf': false
-      }, {
+      },
+      {
         'id': 'exception-codes-upload',
         'parentId': 'code-data-manager',
         'label': '异常追溯上传',
-        'sort': 2,
+        'sort': 7,
         'children': [{
           'id': 'exception-codes-file-query',
           'parentId': 'exception-codes-upload',
@@ -350,7 +487,7 @@ export default [
         'id': 'gs1-rule-manager',
         'parentId': 'code-data-manager',
         'label': 'GS1编制结构管理',
-        'sort': 5,
+        'sort': 8,
         'children': [
           {
             'id': 'gs1-rule-edit',
@@ -387,7 +524,7 @@ export default [
         'id': 'electron-code-rule-manager',
         'parentId': 'code-data-manager',
         'label': '电子监管码编制结构管理',
-        'sort': 5,
+        'sort': 9,
         'children': [
           {
             'id': 'electron-code-rule-edit',

@@ -1,7 +1,7 @@
 {
   "name": "uc-web",
   "description": "uc",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "author": "Hulk <jayzch@qq.com>",
   "private": true,
   "scripts": {

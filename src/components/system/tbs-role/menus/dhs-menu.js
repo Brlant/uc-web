@@ -594,6 +594,13 @@ export default [{
     'children': null,
     'leaf': true
   }, {
+    'id': 'mdm-batchNumber-reject-audit',
+    'parentId': 'mdm-batchNumber-manager',
+    'label': '审核不通过批号',
+    'sort': null,
+    'children': null,
+    'leaf': true
+  }, {
     'id': 'mdm-batchNumber-delete',
     'parentId': 'mdm-batchNumber-manager',
     'label': '删除批号',

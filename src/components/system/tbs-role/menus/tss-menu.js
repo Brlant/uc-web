@@ -330,6 +330,40 @@ export default [
       {
         id: 'code-source-upload-log-query',
         label: '查看追溯码源文件上传监控'
+      },
+      {
+        'id': 'traceCode-data-relation-delete',
+        'parentId': 'traceCode-data',
+        'label': '关联关系删除',
+        'sort': 6,
+        'leaf': false,
+        children: [
+          {
+            'id': 'traceCode-data-relation-delete-view',
+            'parentId': 'traceCode-data-relation-delete',
+            'label': '查看关联关系删除',
+            'sort': 1,
+            'children': null,
+            'leaf': true
+          }
+        ]
+      },
+      {
+        'id': 'traceCode-data-platform-relation-delete',
+        'parentId': 'traceCode-data',
+        'label': '平台关联关系删除',
+        'sort': 7,
+        'leaf': false,
+        children: [
+          {
+            'id': 'traceCode-data-platform-relation-delete-view',
+            'parentId': 'traceCode-data-platform-relation-delete',
+            'label': '查看平台关联关系删除',
+            'sort': 1,
+            'children': null,
+            'leaf': true
+          }
+        ]
       }
     ]
   },

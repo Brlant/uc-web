@@ -110,6 +110,13 @@ export default [
       'sort': 2,
       'children': null,
       'leaf': true
+    }, {
+      'id': 'codes-file-bind-delete',
+      'parentId': 'goods-codes-upload',
+      'label': '删除关联关系',
+      'sort': 4,
+      'children': null,
+      'leaf': true
     }],
     'leaf': false
   }, {

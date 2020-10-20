@@ -437,6 +437,23 @@ export default [
         ]
       },
       {
+        'id': 'traceCode-data-relation-delete',
+        'parentId': 'code-data-manager',
+        'label': '关联关系删除',
+        'sort': 6,
+        'leaf': false,
+        children: [
+          {
+            'id': 'traceCode-data-relation-delete-view',
+            'parentId': 'traceCode-data-relation-delete',
+            'label': '查看关联关系删除',
+            'sort': 1,
+            'children': null,
+            'leaf': true
+          }
+        ]
+      },
+      {
         'id': 'biz-codes-upload',
         'parentId': 'code-data-manager',
         'label': '业务追溯上传',

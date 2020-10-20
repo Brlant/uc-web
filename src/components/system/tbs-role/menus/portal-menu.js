@@ -291,6 +291,13 @@ export default [
           'sort': 2,
           'children': null,
           'leaf': true
+        }, {
+          'id': 'codes-file-bind-delete',
+          'parentId': 'goods-codes-upload',
+          'label': '删除关联关系',
+          'sort': 4,
+          'children': null,
+          'leaf': true
         }],
         'leaf': false
       },
@@ -424,6 +431,23 @@ export default [
             'parentId': 'traceCode-data-cancel',
             'label': '新增追溯码注销',
             'sort': 2,
+            'children': null,
+            'leaf': true
+          }
+        ]
+      },
+      {
+        'id': 'traceCode-data-relation-delete',
+        'parentId': 'code-data-manager',
+        'label': '关联关系删除',
+        'sort': 6,
+        'leaf': false,
+        children: [
+          {
+            'id': 'traceCode-data-relation-delete-view',
+            'parentId': 'traceCode-data-relation-delete',
+            'label': '查看关联关系删除',
+            'sort': 1,
             'children': null,
             'leaf': true
           }

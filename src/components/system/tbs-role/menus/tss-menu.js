@@ -159,13 +159,27 @@ export default [
           'children': null,
           'leaf': true
         },{
+            'id': 'goods-platform-watch-my-sourceCode',
+            'parentId': 'goods-manager-my',
+            'label': '查看资源码',
+            'sort': 3,
+            'children': null,
+            'leaf': true
+          },{
+            'id': 'goods-platform-package-add',
+            'parentId': 'goods-manager-my',
+            'label': '新增包装层级',
+            'sort': 3,
+            'children': null,
+            'leaf': true
+          }/*,{
           'id': 'goods-manager-platform-sourceCode',
           'parentId': 'goods-manager-platform',
           'label': '编辑资源码',
           'sort': 5,
           'children': null,
           'leaf': true
-        }]
+        }*/]
       }
     ]
   },

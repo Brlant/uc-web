@@ -114,14 +114,14 @@ export default [
           'sort': 4,
           'children': null,
           'leaf': true
-        },{
+        }/*,{
           'id': 'goods-manager-my-sourceCode',
           'parentId': 'goods-manager-my',
           'label': '编辑资源码',
           'sort': 5,
           'children': null,
           'leaf': true
-        }]
+        }*/]
       },
       {
         'id': 'goods-manager-platform',

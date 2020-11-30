@@ -344,20 +344,34 @@ export default [
             'children': null,
             'leaf': true
           },{
+            'id': 'goods-watch-my-sourceCode',
+            'parentId': 'goods-manager-my',
+            'label': '查看资源码',
+            'sort': 3,
+            'children': null,
+            'leaf': true
+          },{
+            'id': 'goods-package-add',
+            'parentId': 'goods-manager-my',
+            'label': '新增包装层级',
+            'sort': 3,
+            'children': null,
+            'leaf': true
+          },{
             'id': 'goods-manager-my-delete',
             'parentId': 'goods-manager-my',
             'label': '删除产品子类',
             'sort': 4,
             'children': null,
             'leaf': true
-          },{
+          }/*,{
             'id': 'goods-manager-my-sourceCode',
             'parentId': 'goods-manager-my',
             'label': '编辑资源码',
             'sort': 5,
             'children': null,
             'leaf': true
-          }]
+          }*/]
       },
       {
         'id': 'traceCode-data-apply',

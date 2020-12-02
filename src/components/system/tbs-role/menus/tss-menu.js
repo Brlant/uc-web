@@ -190,6 +190,20 @@ export default [
     leaf: false,
     children: [
       {
+        'id': 'codes-file-batch-upload-manager',
+        'parentId': 'code-data-manager',
+        'label': '源文件批量上传',
+        'sort': 1,
+        'children': [{
+          'id': 'codes-file-batch-upload',
+          'parentId': 'codes-file-batch-upload-manager',
+          'label': '新增源文件批量上传',
+          'sort': 2,
+          'children': null,
+          'leaf': true
+        }],
+        'leaf': false
+      }, {
         'id': 'traceCode-data-apply',
         'parentId': 'traceCode-data',
         'label': '追溯码申请',

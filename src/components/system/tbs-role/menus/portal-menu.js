@@ -716,6 +716,13 @@ export default [
         'label': '业务追溯查询',
         'sort': 3,
         'children': [{
+          'id': 'code-biz-trace-view',
+          'parentId': 'code-biz-trace',
+          'label': '查看业务追溯',
+          'sort': 3,
+          'children': null,
+          'leaf': true
+        },{
           'id': 'code-biz-log-push',
           'parentId': 'code-biz-trace',
           'label': '推送数据',
@@ -744,6 +751,13 @@ export default [
         'label': '入库单追溯',
         'sort': 3,
         'children': [{
+          'id': 'code-biz-in-trace-view',
+          'parentId': 'code-biz-in-trace',
+          'label': '查看入库单追溯',
+          'sort': 3,
+          'children': null,
+          'leaf': true
+        },{
           'id': 'code-biz-in-log-push',
           'parentId': 'code-biz-in-trace',
           'label': '推送数据',
@@ -772,6 +786,13 @@ export default [
         'label': '出库单追溯',
         'sort': 3,
         'children': [{
+          'id': 'code-biz-out-trace-view',
+          'parentId': 'code-biz-out-trace',
+          'label': '查看出库单追溯',
+          'sort': 3,
+          'children': null,
+          'leaf': true
+        },{
           'id': 'code-biz-out-log-push',
           'parentId': 'code-biz-out-trace',
           'label': '推送数据',
@@ -1048,7 +1069,7 @@ export default [
   {
     'id': 'bsp-stock-manager',
     'parentId': null,
-    'label': '报表管理',
+    'label': '库存管理',
     'sort': 2,
     'children': [{
       'id': 'bsp-stock-org-query',

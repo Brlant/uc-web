@@ -708,13 +708,6 @@ export default [
           'sort': 2,
           'children': null,
           'leaf': true
-        }, {
-          'id': 'code-trace-inventory-surplus-query',
-          'parentId': 'code-trace-query',
-          'label': '查询盘盈入库日志信息',
-          'sort': 2,
-          'children': null,
-          'leaf': true
         }],
         'leaf': false
       }, {
@@ -739,6 +732,62 @@ export default [
         }, {
           'id': 'code-biz-trace-delete-code',
           'parentId': 'code-biz-trace',
+          'label': '删除追溯码日志',
+          'sort': 1,
+          'children': null,
+          'leaf': true
+        }],
+        'leaf': false
+      }, {
+        'id': 'code-biz-in-trace',
+        'parentId': 'code-trace-manager',
+        'label': '入库单追溯',
+        'sort': 3,
+        'children': [{
+          'id': 'code-biz-in-log-push',
+          'parentId': 'code-biz-in-trace',
+          'label': '推送数据',
+          'sort': 3,
+          'children': null,
+          'leaf': true
+        }, {
+          'id': 'code-biz-in-trace-insert-code',
+          'parentId': 'code-biz-in-trace',
+          'label': '录入追溯码日志',
+          'sort': 2,
+          'children': null,
+          'leaf': true
+        }, {
+          'id': 'code-biz-in-trace-delete-code',
+          'parentId': 'code-biz-in-trace',
+          'label': '删除追溯码日志',
+          'sort': 1,
+          'children': null,
+          'leaf': true
+        }],
+        'leaf': false
+      }, {
+        'id': 'code-biz-out-trace',
+        'parentId': 'code-trace-out-manager',
+        'label': '出库单追溯',
+        'sort': 3,
+        'children': [{
+          'id': 'code-biz-out-log-push',
+          'parentId': 'code-biz-out-trace',
+          'label': '推送数据',
+          'sort': 3,
+          'children': null,
+          'leaf': true
+        }, {
+          'id': 'code-biz-out-trace-insert-code',
+          'parentId': 'code-biz-out-trace',
+          'label': '录入追溯码日志',
+          'sort': 2,
+          'children': null,
+          'leaf': true
+        }, {
+          'id': 'code-biz-out-trace-delete-code',
+          'parentId': 'code-biz-out-trace',
           'label': '删除追溯码日志',
           'sort': 1,
           'children': null,

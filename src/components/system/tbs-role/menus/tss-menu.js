@@ -490,13 +490,6 @@ export default [
           'sort': 2,
           'children': null,
           'leaf': true
-        }, {
-          'id': 'code-trace-inventory-surplus-query',
-          'parentId': 'code-trace-query',
-          'label': '查询盘盈入库日志信息',
-          'sort': 2,
-          'children': null,
-          'leaf': true
         }],
         'leaf': false
       },

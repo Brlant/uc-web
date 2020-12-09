@@ -723,6 +723,13 @@ export default [
           'children': null,
           'leaf': true
         },{
+          'id': 'code-biz-log-unknow-code-download',
+          'parentId': 'code-biz-trace',
+          'label': '下载未知追溯码',
+          'sort': 3,
+          'children': null,
+          'leaf': true
+        },{
           'id': 'code-biz-log-push',
           'parentId': 'code-biz-trace',
           'label': '推送数据',

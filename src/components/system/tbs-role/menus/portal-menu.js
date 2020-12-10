@@ -723,13 +723,6 @@ export default [
           'children': null,
           'leaf': true
         },{
-          'id': 'code-biz-log-unknow-code-download',
-          'parentId': 'code-biz-trace',
-          'label': '下载未知追溯码',
-          'sort': 3,
-          'children': null,
-          'leaf': true
-        },{
           'id': 'code-biz-log-push',
           'parentId': 'code-biz-trace',
           'label': '推送数据',
@@ -1343,6 +1336,14 @@ export default [
     'parentId': 'code-system-manager',
     'label': '编辑附件名称',
     'sort': 9,
+    'children': null,
+    'leaf': true
+  },
+  {
+    'id': 'code-biz-log-unknow-code-download',
+    'parentId': 'code-system-manager',
+    'label': '下载未知追溯码',
+    'sort': 3,
     'children': null,
     'leaf': true
   }

@@ -247,6 +247,14 @@ export default [
             'sort': null,
             'children': null,
             'leaf': true
+          },
+          {
+            'id': 'mdm-operating-org-batch-add',
+            'parentId': 'mdm-operating-org-manager',
+            'label': '导入TXT批量新增业务单位',
+            'sort': null,
+            'children': null,
+            'leaf': true
           }],
         'leaf': false
       }

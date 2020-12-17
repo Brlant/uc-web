@@ -221,13 +221,13 @@ export default [
       {
         'id': 'mdm-operating-org-manager',
         'parentId': null,
-        'label': '业务单位',
+        'label': '往来单位',
         'sort': 3,
         'children': [
           {
             'id': 'mdm-operating-org-watch',
             'parentId': 'mdm-operating-org-manager',
-            'label': '查看业务单位',
+            'label': '查看往来单位',
             'sort': null,
             'children': null,
             'leaf': true
@@ -235,7 +235,7 @@ export default [
           {
             'id': 'mdm-operating-org-delete',
             'parentId': 'mdm-operating-org-manager',
-            'label': '删除业务单位',
+            'label': '删除往来单位',
             'sort': null,
             'children': null,
             'leaf': true
@@ -243,7 +243,15 @@ export default [
           {
             'id': 'mdm-operating-org-add',
             'parentId': 'mdm-operating-org-manager',
-            'label': '新增业务单位',
+            'label': '新增往来单位',
+            'sort': null,
+            'children': null,
+            'leaf': true
+          },
+          {
+            'id': 'mdm-operating-org-batch-add',
+            'parentId': 'mdm-operating-org-manager',
+            'label': '导入TXT批量新增往来单位',
             'sort': null,
             'children': null,
             'leaf': true

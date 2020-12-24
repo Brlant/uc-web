@@ -241,6 +241,14 @@ export default [
             'leaf': true
           },
           {
+            'id': 'mdm-operating-org-update',
+            'parentId': 'mdm-operating-org-manager',
+            'label': '编辑往来单位编码',
+            'sort': null,
+            'children': null,
+            'leaf': true
+          },
+          {
             'id': 'mdm-operating-org-add',
             'parentId': 'mdm-operating-org-manager',
             'label': '新增往来单位',

@@ -786,7 +786,7 @@ export default [
         }, {
           'id': 'code-biz-in-trace-insert-code',
           'parentId': 'code-biz-in-trace',
-          'label': '录入追溯码日志',
+          'label': '添加追溯码日志',
           'sort': 2,
           'children': null,
           'leaf': true

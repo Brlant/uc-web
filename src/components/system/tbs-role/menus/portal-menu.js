@@ -519,6 +519,9 @@ export default [
         }, {
           id: 'biz-codes-file-upload-xml',
           label: '上传业务数据XML'
+        }, {
+          id: 'biz-codes-file-batch-out-add',
+          label: '整批出库'
         }],
         'leaf': false
       },

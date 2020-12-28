@@ -762,6 +762,27 @@ export default [
           'sort': 1,
           'children': null,
           'leaf': true
+        },{
+          'id': 'code-biz-trace-unknow-code-download',
+          'parentId': 'code-biz-trace',
+          'label': '下载未知追溯码',
+          'sort': 3,
+          'children': null,
+          'leaf': true
+        },{
+          'id': 'code-biz-trace-know-code-download',
+          'parentId': 'code-biz-trace',
+          'label': '下载已知追溯码',
+          'sort': 3,
+          'children': null,
+          'leaf': true
+        },{
+          'id': 'code-biz-trace-code-excel-export',
+          'parentId': 'code-biz-trace',
+          'label': '导出追溯码Excel',
+          'sort': 3,
+          'children': null,
+          'leaf': true
         }],
         'leaf': false
       }, {
@@ -797,6 +818,27 @@ export default [
           'sort': 1,
           'children': null,
           'leaf': true
+        },{
+          'id': 'code-biz-in-trace-unknow-code-download',
+          'parentId': 'code-biz-trace',
+          'label': '下载未知追溯码',
+          'sort': 3,
+          'children': null,
+          'leaf': true
+        },{
+          'id': 'code-biz-in-trace-know-code-download',
+          'parentId': 'code-biz-trace',
+          'label': '下载已知追溯码',
+          'sort': 3,
+          'children': null,
+          'leaf': true
+        },{
+          'id': 'code-biz-in-trace-code-excel-export',
+          'parentId': 'code-biz-trace',
+          'label': '导出追溯码Excel',
+          'sort': 3,
+          'children': null,
+          'leaf': true
         }],
         'leaf': false
       }, {
@@ -830,6 +872,27 @@ export default [
           'parentId': 'code-biz-out-trace',
           'label': '删除追溯码日志',
           'sort': 1,
+          'children': null,
+          'leaf': true
+        },{
+          'id': 'code-biz-out-trace-unknow-code-download',
+          'parentId': 'code-biz-trace',
+          'label': '下载未知追溯码',
+          'sort': 3,
+          'children': null,
+          'leaf': true
+        },{
+          'id': 'code-biz-out-trace-know-code-download',
+          'parentId': 'code-biz-trace',
+          'label': '下载已知追溯码',
+          'sort': 3,
+          'children': null,
+          'leaf': true
+        },{
+          'id': 'code-biz-out-trace-code-excel-export',
+          'parentId': 'code-biz-trace',
+          'label': '导出追溯码Excel',
+          'sort': 3,
           'children': null,
           'leaf': true
         }],

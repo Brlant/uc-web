@@ -1420,13 +1420,5 @@ export default [
     'sort': 9,
     'children': null,
     'leaf': true
-  },
-  {
-    'id': 'code-biz-log-unknow-code-download',
-    'parentId': 'code-system-manager',
-    'label': '下载未知追溯码',
-    'sort': 3,
-    'children': null,
-    'leaf': true
   }
 ];

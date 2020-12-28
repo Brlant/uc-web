@@ -546,7 +546,38 @@ export default [
     children: [
       {
         id: 'code-biz-trace',
-        label: '业务追溯数据监管'
+        label: '业务追溯数据监管',
+        children:[
+          {
+            'id': 'code-biz-trace-watch',
+            'parentId': 'code-biz-trace',
+            'label': '查看业务追溯数据监管',
+            'sort': 3,
+            'children': null,
+            'leaf': true
+          }, {
+            'id': 'code-biz-trace-unknow-code-download',
+            'parentId': 'code-biz-trace',
+            'label': '下载未知追溯码',
+            'sort': 3,
+            'children': null,
+            'leaf': true
+          },{
+            'id': 'code-biz-trace-know-code-download',
+            'parentId': 'code-biz-trace',
+            'label': '下载已知追溯码',
+            'sort': 3,
+            'children': null,
+            'leaf': true
+          },{
+            'id': 'code-biz-trace-code-excel-export',
+            'parentId': 'code-biz-trace',
+            'label': '导出追溯码Excel',
+            'sort': 3,
+            'children': null,
+            'leaf': true
+          }
+        ]
       },
       {
         id: 'logistics-trace-query',

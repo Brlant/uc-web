@@ -522,6 +522,9 @@ export default [
         }, {
           id: 'biz-codes-file-batch-out-add',
           label: '整批出库'
+        }, {
+          id: 'biz-codes-file-order-add',
+          label: '新增订单'
         }],
         'leaf': false
       },

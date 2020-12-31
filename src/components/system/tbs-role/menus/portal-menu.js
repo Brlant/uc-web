@@ -263,6 +263,13 @@ export default [
             'sort': null,
             'children': null,
             'leaf': true
+          },{
+            'id': 'mdm-operating-org-excel-batch-add',
+            'parentId': 'mdm-operating-org-manager',
+            'label': '导入EXCEL批量新增往来单位',
+            'sort': null,
+            'children': null,
+            'leaf': true
           }],
         'leaf': false
       }

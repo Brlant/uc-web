@@ -688,6 +688,13 @@ export default [
           'sort': 1,
           'children': null,
           'leaf': true
+        },{
+          'id': 'child-code-trace-query',
+          'parentId': 'code-trace-query',
+          'label': '追溯码子码查询',
+          'sort': 1,
+          'children': null,
+          'leaf': true
         }, {
           'id': 'code-trace-injection-query',
           'parentId': 'code-trace-query',

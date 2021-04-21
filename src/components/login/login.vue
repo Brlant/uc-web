@@ -130,7 +130,7 @@
       check() {
         // 为空时, 不用做判断
         if (!this.user.username) return;
-        this.$http.post('/login/check', {username: this.trim(this.user.username)}).catch(error => {
+        this.$http.post('/dhs/login/check', {username: this.trim(this.user.username)}).catch(error => {
           if (error.response.status === 405) {
             this.needCode = true;
             let list = error.response.data && error.response.data.map(m => ({value: m}));

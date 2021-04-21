@@ -555,6 +555,13 @@ export default [
             'sort': 3,
             'children': null,
             'leaf': true
+          },{
+            'id': 'code-biz-trace-order-delete',
+            'parentId': 'code-biz-trace',
+            'label': '删除业务单据',
+            'sort': 3,
+            'children': null,
+            'leaf': true
           }, {
             'id': 'code-biz-trace-unknow-code-download',
             'parentId': 'code-biz-trace',

@@ -822,6 +822,13 @@ export default [
           'children': null,
           'leaf': true
         },{
+          'id': 'code-biz-in-trace-delete',
+          'parentId': 'code-biz-in-trace',
+          'label': '删除入库单追溯',
+          'sort': 3,
+          'children': null,
+          'leaf': true
+        },{
           'id': 'code-biz-in-log-push',
           'parentId': 'code-biz-in-trace',
           'label': '推送数据',
@@ -881,6 +888,13 @@ export default [
           'id': 'code-biz-out-trace-edit',
           'parentId': 'code-biz-out-trace',
           'label': '编辑出库单追溯',
+          'sort': 3,
+          'children': null,
+          'leaf': true
+        },{
+          'id': 'code-biz-out-trace-delete',
+          'parentId': 'code-biz-out-trace',
+          'label': '删除出库单追溯',
           'sort': 3,
           'children': null,
           'leaf': true

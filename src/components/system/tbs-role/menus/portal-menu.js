@@ -44,7 +44,22 @@ export default [
           'sort': 3,
           'children': null,
           'leaf': true
-        }],
+        },{
+          'id': 'code-batch-number-autonomously-audit',
+          'parentId': 'code-batch-number-manager',
+          'label': '审核通过',
+          'sort': null,
+          'children': null,
+          'leaf': true
+        },
+          {
+            'id': 'code-batch-number-autonomously-reject-audit',
+            'parentId': 'code-batch-number-manager',
+            'label': '审核不通过',
+            'sort': null,
+            'children': null,
+            'leaf': true
+          }],
         'leaf': false
       },
       {
@@ -80,7 +95,22 @@ export default [
           'sort': null,
           'children': null,
           'leaf': true
-        }],
+        },{
+          'id': 'code-goods-autonomously-audit',
+          'parentId': 'mdm-goods-manager',
+          'label': '审核通过',
+          'sort': null,
+          'children': null,
+          'leaf': true
+        },
+          {
+            'id': 'code-goods-autonomously-reject-audit',
+            'parentId': 'mdm-goods-manager',
+            'label': '审核不通过',
+            'sort': null,
+            'children': null,
+            'leaf': true
+          }],
         'leaf': false
       },
       {
@@ -94,6 +124,14 @@ export default [
           {
             id: 'mdm-business-unit-add',
             label: '新增单位',
+          },
+          {
+            id: 'code-org-autonomously-audit',
+            label: '审核通过',
+          },
+          {
+            id: 'mdm-business-autonomously-reject-audit',
+            label: '审核不通过',
           }
         ]
       },

@@ -1185,6 +1185,10 @@ export default [
         'leaf': false
       },
       {
+        id: 'bsp-order-complete',
+        label: '完成订单'
+      },
+      {
         'id': 'portal-order-download-code-file',
         'parentId': 'bsp-order-manager',
         'label': '下载复核追溯码文件',

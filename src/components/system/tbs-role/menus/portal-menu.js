@@ -130,7 +130,7 @@ export default [
             label: '审核通过',
           },
           {
-            id: 'mdm-business-autonomously-reject-audit',
+            id: 'code-org-autonomously-reject-audit',
             label: '审核不通过',
           }
         ]
@@ -146,6 +146,14 @@ export default [
           {
             id: 'mdm-biz-edit',
             label: '编辑我的单位',
+          },
+          {
+            id: 'mdm-biz-org-autonomously-audit',
+            label: '审核通过',
+          },
+          {
+            id: 'mdm-biz-org-autonomously-reject-audit',
+            label: '审核不通过',
           }
         ]
       },

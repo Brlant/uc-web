@@ -68,6 +68,13 @@ export default [
         'label': '货品主档',
         'sort': 2,
         'children': [{
+          'id': 'mdm-goods-query',
+          'parentId': 'mdm-goods-manager',
+          'label': '查看货品主档',
+          'sort': null,
+          'children': null,
+          'leaf': true
+        },{
           'id': 'mdm-goods-delete',
           'parentId': 'mdm-goods-manager',
           'label': '删除货品',

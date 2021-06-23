@@ -583,7 +583,22 @@ export default [
             'sort': 3,
             'children': null,
             'leaf': true
+          },{
+            'id': 'code-biz-trace-insert-code',
+            'parentId': 'code-biz-trace',
+            'label': '录入追溯码日志',
+            'sort': 2,
+            'children': null,
+            'leaf': true
+          }, {
+            'id': 'code-biz-trace-delete-code',
+            'parentId': 'code-biz-trace',
+            'label': '删除追溯码日志',
+            'sort': 1,
+            'children': null,
+            'leaf': true
           }
+
         ]
       },
       {

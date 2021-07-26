@@ -923,6 +923,20 @@ export default [
           'sort': 3,
           'children': null,
           'leaf': true
+        },{
+          'id': 'code-biz-in-trace-count-export',
+          'parentId': 'code-biz-in-trace',
+          'label': '导出入库单追溯汇总数据',
+          'sort': 3,
+          'children': null,
+          'leaf': true
+        },{
+          'id': 'code-biz-in-trace-detail-count-export',
+          'parentId': 'code-biz-out-trace',
+          'label': '导出入库单追溯明细汇总数据',
+          'sort': 3,
+          'children': null,
+          'leaf': true
         }],
         'leaf': false
       }, {
@@ -990,6 +1004,20 @@ export default [
           'id': 'code-biz-out-trace-code-excel-export',
           'parentId': 'code-biz-trace',
           'label': '导出追溯码Excel',
+          'sort': 3,
+          'children': null,
+          'leaf': true
+        },{
+          'id': 'code-biz-out-trace-count-export',
+          'parentId': 'code-biz-out-trace',
+          'label': '导出出库单追溯汇总数据',
+          'sort': 3,
+          'children': null,
+          'leaf': true
+        },{
+          'id': 'code-biz-out-trace-detail-count-export',
+          'parentId': 'code-biz-out-trace',
+          'label': '导出出库单追溯明细汇总数据',
           'sort': 3,
           'children': null,
           'leaf': true

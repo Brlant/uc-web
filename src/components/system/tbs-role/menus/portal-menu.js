@@ -585,6 +585,9 @@ export default [
         }, {
           id: 'biz-codes-file-order-add',
           label: '新增订单'
+        }, {
+          id: 'biz-codes-file-upload-order',
+          label: '上传Excel新增订单'
         }],
         'leaf': false
       },

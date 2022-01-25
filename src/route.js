@@ -32,11 +32,6 @@ export const route = [
     component: () => import('./components/index.vue'),
     children: [
       {
-        path: '/resetpsw', component: () => import('./components/login/resetpsw.vue'),
-        meta: {perm: 'show'},
-        children: []
-      },
-      {
         path: '/account/all', component: () => import('./components/system/tbs-permission/index.vue'),
         meta: {moduleId: 'account', title: '账户管理', icon: 'setting', perm: 'mdm-platform-user-watch', systemId: 'dhs'},
         children: []
@@ -85,6 +80,11 @@ export const basicRoutes = [
   {path: '/500', component: () => import('./components/error/error_500.vue')},
   {path: '/login', component: () => import('./components/login/login.vue')},
   {path: '/forget', component: () => import('./components/login/forget.vue')},
+  {
+    path: '/resetpsw', component: () => import('./components/login/resetpsw.vue'),
+    meta: {perm: 'show'},
+    children: []
+  },
   {path: '/code/:id', component: () => import('./components/login/resetpwd.vue')}
 ];
 

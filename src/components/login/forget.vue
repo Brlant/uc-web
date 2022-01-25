@@ -99,15 +99,10 @@
         if (value === '') {
           callback(new Error('请输入密码'));
         } else {
-          let rl = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{8,16}$/;
-          if (!rl.test(self.resetUser.password)) {
-            callback('新密码必须包含数字、大写字母,小写字母,至少8-16个字符');
-          } else {
             if (self.resetUser.password2 !== '') {
               this.$refs.resetForm.validateField('password2');
             }
             callback();
-          }
         }
       };
       let validatePass2 = (rule, value, callback) => {

@@ -1,35 +1,35 @@
 <style lang="scss">
-  @import "../assets/scss/mixins";
+@import "../assets/scss/mixins";
 
-  .btn-left-list-more {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 5;
-    background: rgba(255, 255, 255, 0.9);
-    text-align: center;
+.btn-left-list-more {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
 
-    .el-button {
-      border: none;
-      color: #666;
-      background: 0 0;
-      padding-left: 0;
-      padding-right: 0;
+  .el-button {
+    border: none;
+    color: #666;
+    background: 0 0;
+    padding-left: 0;
+    padding-right: 0;
 
-      &:hover {
-        color: #333
-      }
+    &:hover {
+      color: #333
     }
   }
+}
 
-  .min-div {
-    height: 0;
-    width: 0;
-    display: inline;
-    overflow: hidden;
-    line-height: 0;
-  }
+.min-div {
+  height: 0;
+  width: 0;
+  display: inline;
+  overflow: hidden;
+  line-height: 0;
+}
 </style>
 <template>
   <div class="app-body full-width" :style="'padding-left:'+bodyLeft">
@@ -51,62 +51,107 @@
 </template>
 
 <script>
-    import AppHeader from './layout/app.header.vue';
-    import AppFooter from './layout/app.footer.vue';
-    import {DictGroup} from '../resources';
-    import utils from '../tools/utils';
-    import attachmentDialog from './common/attachment.dialog.vue';
-    import printDialog from './common/print.loading.vue';
+import AppHeader from './layout/app.header.vue';
+import AppFooter from './layout/app.footer.vue';
+import {DictGroup} from '@/resources';
+import utils from '../tools/utils';
+import attachmentDialog from './common/attachment.dialog.vue';
+import printDialog from './common/print.loading.vue';
 
-    export default {
-    data: () => ({
-      transitionName: 'slide-left',
-      toRoute: {}
-    }),
-    computed: {
-      bodyLeft: function () {
-        return this.$store.state.bodySize['left'];
-      },
-      userType: function () {
-        return this.$store.state.user['userType'];
-      }
+export default {
+  data: () => ({
+    transitionName: 'slide-left',
+    toRoute: {},
+    needCheck: false
+  }),
+  computed: {
+    bodyLeft: function () {
+      return this.$store.state.bodySize['left'];
     },
-    beforeRouteEnter(to, form, next) {
-      next(vm => {
-        vm.toRoute = to;
-      });
+    userType() {
+      return this.$store.state.user['userType'];
     },
-    beforeRouteUpdate(to, from, next) {
-      utils.removeClass(document.getElementsByTagName('body')[0], 'overflow-hidden');
-      this.toRoute = to;
-      next();
+    updatePassFlag() {
+      return this.$store.state.user['updatePassFlag'];
     },
-    components: {AppHeader, AppFooter, attachmentDialog, printDialog},
-    methods: {
-      setBodyHeight: function () {
-        this.$store.commit('setBodyHeight', {
-          height: window.innerHeight - 200 + 'px',
-          window: {width: window.innerWidth, height: window.innerHeight}
-        });
-      },
-      queryDomainInfo() {
-        this.$http.get('/code-domain/domain-name').then(res => {
-          this.$store.commit('initDomainInfo', res.data);
-        }).catch(() => {
-          this.$store.commit('initDomainInfo', {});
-        });
-      }
+    days() {
+      return this.$store.state.user['passwordRule'];
     },
-    mounted: function () {
-      // this.queryDomainInfo();
-      utils.removeClass(document.getElementsByTagName('body')[0], 'overflow-hidden');
-      DictGroup.getAll().then(data => {
-        this.$store.commit('initDict', data);
-      });
-      window.addEventListener('resize', (e) => {
-        this.setBodyHeight();
-      });
-      this.setBodyHeight();
+    checkPwd() {
+      return this.needCheck && this.updatePassFlag;
     }
-  };
+  },
+  watch: {
+    checkPwd(val) {
+      if (val) {
+        setTimeout(this.showTip, 200);
+      }
+    }
+  },
+  beforeRouteEnter(to, form, next) {
+    next(vm => {
+      vm.toRoute = to;
+    });
+  },
+  beforeRouteUpdate(to, from, next) {
+    utils.removeClass(document.getElementsByTagName('body')[0], 'overflow-hidden');
+    this.toRoute = to;
+    next();
+  },
+  components: {AppHeader, AppFooter, attachmentDialog, printDialog},
+  methods: {
+    // 显示安全提示
+    showTip() {
+      // 如果需要修改密码，给出提示：您当前登录密码使用已超过xx天，为保证您的账号安全，请立即修改。
+      this.$alert('您当前登录密码使用已超过' + this.days + '天，为保证您的账号安全，请立即修改。', '安全提示', {
+        confirmButtonText: '去修改', center: true, showClose: false
+      }).then(() => {
+        this.$router.replace("/resetpsw")
+      }).catch(err => {
+        console.log("加载alert异常", err)
+      });
+
+      this.needCheck = false;
+    },
+    setBodyHeight: function () {
+      this.$store.commit('setBodyHeight', {
+        height: window.innerHeight - 200 + 'px',
+        window: {width: window.innerWidth, height: window.innerHeight}
+      });
+    },
+    queryDomainInfo() {
+      this.$http.get('/code-domain/domain-name').then(res => {
+        this.$store.commit('initDomainInfo', res.data);
+      }).catch(() => {
+        this.$store.commit('initDomainInfo', {});
+      });
+    }
+  },
+  mounted: function () {
+    // this.queryDomainInfo();
+    utils.removeClass(document.getElementsByTagName('body')[0], 'overflow-hidden');
+    DictGroup.getAll().then(data => {
+      this.$store.commit('initDict', data);
+    });
+    window.addEventListener('resize', (e) => {
+      this.setBodyHeight();
+    });
+    this.setBodyHeight();
+
+    this.needCheck = true;
+    // 监听后退和地址栏变化
+    window.addEventListener('popstate', (e) => {
+      // 当用户手动后退或者修改地址栏的时候，重新触法一次密码校验
+      let hash = e.currentTarget.location.hash;
+      // 定义那些页面不需要安全提示
+      let ext = hash.indexOf('login') !== -1 || hash.indexOf('resetpsw') !== -1 || hash.indexOf('forget') !== -1;
+      if (ext) {
+        console.log("popstate.location.hash", hash);
+        return;
+      }
+
+      this.needCheck = true;
+    });
+  }
+};
 </script>

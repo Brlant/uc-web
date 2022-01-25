@@ -1,4 +1,4 @@
-<style lang="scss" scoped="">
+<style lang="scss" scoped>
   body {
     background: #f5f5f5
   }
@@ -52,7 +52,7 @@
 </template>
 
 <script>
-  import {User} from '../../resources';
+  import {User} from '@/resources';
 
   export default {
     name: 'resetpsw',
@@ -68,18 +68,7 @@
           }
         }
       };
-      let checkPasswd = (rule, value, callback) => {
-        if (value === '') {
-          callback(new Error('请输入密码'));
-        } else {
-          let rl = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{8,16}$/;
-          if (!rl.test(this.user.password)) {
-            callback('新密码必须包含数字、大写字母,小写字母,至少8-16个字符');
-          } else {
-            callback();
-          }
-        }
-      };
+
       return {
         user: {oldPassword: '', password: '', password2: ''},
         loading: false,
@@ -90,7 +79,6 @@
           ],
           password: [
             {required: true, message: '请输入新密码', trigger: 'blur'},
-            {validator: checkPasswd, trigger: 'blur'}
           ],
           password2: [
             {required: true, message: '请输入确认密码', trigger: 'blur'},
@@ -108,12 +96,12 @@
               this.$notify.info({
                 message: '修改成功'
               });
-              this.$router.go(-1);
+              this.$router.push('/login');
             }).catch(e => {
               let error = e.response;
               if (error.status === 400) {
-                this.$notify.info({
-                  message: error.data.meta.message
+                this.$notify.error({
+                  message: error.data.msg
                 });
               }
             });

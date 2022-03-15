@@ -67,7 +67,7 @@ store.state.systemList.forEach(i => {
   //   component: () => import('./components/system/tbs-role/index.vue'),
   //   meta: {moduleId: 'role', systemId: i.systemId, perm: i.rolePerm}
   // });
-  route[0].children[3].children.push({
+  route[0].children[2].children.push({
     path: `/log/${i.systemId}`,
     component: () => import('./components/system/log/index.vue'),
     meta: {moduleId: 'log', title: `${i.title}系统日志`, objectId: i.objectId, systemId: i.systemId, perm: i.logPerm}
